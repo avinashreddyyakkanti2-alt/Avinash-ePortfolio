@@ -1,5 +1,55 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
-About this site
+
+I am **Avinash Reddy**, a Full Stack Engineer with **3 years of experience** building production-grade web applications for enterprise and government clients.
+
+I specialise in building scalable systems using modern web and backend technologies, with a strong focus on performance, automation, and real-world impact.
+
+---
+
+## What I Do
+
+I work across the full stack:
+
+- Frontend development using React.js, Next.js, and TypeScript  
+- Backend development using Node.js, Django, and FastAPI  
+- Designing and building REST APIs and scalable architectures  
+- Working with cloud platforms like AWS, Azure, and GCP  
+- Handling large-scale data systems using BigQuery and SQL  
+
+---
+
+##  Experience Highlights
+
+- Built a **real-time revenue forecasting platform** using Next.js and BigQuery, improving performance by 40%  
+- Developed a **government form management system** that reduced administrative effort by 70%  
+- Built scalable APIs and backend services handling thousands of records efficiently  
+- Worked on data ingestion pipelines automating workflows and reducing manual processing by 60%  
+- Built production systems used by 100,000+ users in high-traffic environments  
+
+---
+
+##  My Goals
+
+My goal is to grow as a **Senior Full Stack / Data Engineer** and build systems that combine **software engineering, data, and AI** to solve real-world problems at scale.
+
+---
+---
+
+## Education
+
+**Dublin City University (DCU)**  
+MSc in Business Analytics *(Expected 2026)*  
+Dublin, Ireland  
+
+**VNR Vignana Jyothi Institute of Engineering & Technology**  
+BTech in Computer Science & Engineering *(2023)*  
+Hyderabad, India  
+
+---
+
+::: callout-note
+This portfolio showcases my projects in Full Stack Development, Data Engineering, and AI systems.
+:::

@@ -1,7 +1,27 @@
 ---
-title: "Avinash Reddy"
+title: "Avinash Reddy Yakkanti"
+about:
+  id: hero-heading
+  template: jolla
+  image: images/profile.png
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:yakkantiavinash6@gmail.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/avinashreddy11105
+    - icon: github
+      text: GitHub
+      href: https://github.com/yourusername
 ---
 
-This is a Quarto website.
+:::{#hero-heading}
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Full Stack Engineer · Dublin, Ireland
+
+3 years building production-grade web applications for enterprise and government clients using React.js, Next.js, Node.js, Python, Django, and FastAPI.
+
+[View About →](about.qmd)
+
+:::

@@ -9,12 +9,14 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+    right:
+      - text: CV
+        file: cv/Avinash_cv.pdf
+        target: _blank
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: flatly
     css: styles.css
     toc: true
 

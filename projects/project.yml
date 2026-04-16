@@ -1,0 +1,7 @@
+- title: Automated Data Ingestion Platform 
+  description: Python, Node.js, React.js, BigQuery, Google Sheets API  Designed an end-to-end pipeline automating data retrieval from GAM, Gmail API, and TAM into BigQuery, with a React.js monitoring dashboard that cut manual processing time by 60%.
+  path: list/project1.qmd
+
+- title: RAG-Powered Document Q&A Assistant
+  description: Project on frone
+  path: list/project2.qmd
