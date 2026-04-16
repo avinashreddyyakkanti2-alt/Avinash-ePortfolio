@@ -1,14 +1,29 @@
-/.quarto/
-**/*.quarto_ipynb
+# Quarto
+.quarto/
 _site/
+*_files/
+
 # Python
 __pycache__/
 *.pyc
+.venv/
+venv/
+env/
 
 # OS files
 .DS_Store
+Thumbs.db
 
-# Large files
+# Jupyter (only if you use notebooks)
+.ipynb_checkpoints/
+
+# Large data files (optional but recommended for assignment safety)
 *.zip
 *.csv
 *.xlsx
+*.json
+*.parquet
+
+# IDE
+.vscode/
+.idea/
