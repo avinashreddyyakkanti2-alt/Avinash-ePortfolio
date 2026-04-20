@@ -1,30 +1,65 @@
 ---
-title: "Get in touch"
+title: "Contact & References"
+subtitle: "The fastest ways to reach me, and who can vouch for my work"
+toc: true
 ---
+
+## Get in touch
+
+I reply to email within a working day. If you're reaching out about
+**analytics or full-stack roles**, **freelance Python / FastAPI work**,
+or a technical idea you want to discuss - I'd love to hear from you.
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
-## Let's chat
 
-I reply to email within a working day. If you're reaching out about
-**full-stack engineering roles**, **freelance Python/FastAPI work**, or
-just want to discuss a technical idea - I'd love to hear from you.
+### Direct channels
 
-- {{< fa envelope >}} [avinashyakkanti12.com](mailto:avinashyakkanti12@gmail.com)
-- {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/<your-handle>)
-- {{< fa brands github >}} [GitHub](https://github.com/<your-username>)
+- {{< fa envelope >}} &nbsp; [yakkantiavinash6@gmail.com](mailto:yakkantiavinash6@gmail.com)
+- {{< fa brands linkedin >}} &nbsp; [linkedin.com/in/avinashreddy11105](https://linkedin.com/in/avinashreddy11105)
+- {{< fa brands github >}} &nbsp; [github.com/avinashreddy11105](https://github.com/avinashreddy11105)
+
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-## Based in
 
-Dublin, Ireland 🇮🇪 — available for remote work across EMEA time zones.
+### Based in
+
+**Dublin, Ireland** 🇮🇪  
+
+Currently studying at **Dublin City University**, available for roles and
+collaborations across **EMEA** time zones - and remote-friendly further
+afield.
 
 ::: {.callout-tip}
-The fastest way to reach me is **LinkedIn**. I screen email for newsletters,
-so direct messages cut through faster.
-:::
+Fastest response on **LinkedIn**. Email works too, but LinkedIn cuts
+through the noise.
 :::
 
 :::
+
+:::
+
+---
+
+## Professional references
+
+Available on request. Please reach out via email and I'll put you in touch
+with:
+
+- A **technical lead** from my most recent full-stack engagement
+- A **programme lecturer** from Dublin City University (MSc Business Analytics)
+- A **client-side stakeholder** from a government project I contributed to
+
+::: {.callout-note}
+Reference contact details are not listed publicly to respect the
+referees' privacy. They are happy to speak on request.
+:::
+
+---
+
+---
+
+*I also maintain a [GitHub profile](https://github.com/avinashreddy11105) -
+the code behind each project on this site lives there.*
