@@ -1,7 +1,13 @@
-- title: Automated Data Ingestion Platform 
-  description: Python, Node.js, React.js, BigQuery, Google Sheets API  Designed an end-to-end pipeline automating data retrieval from GAM, Gmail API, and TAM into BigQuery, with a React.js monitoring dashboard that cut manual processing time by 60%.
-  path: list/project1.qmd
+- title: "RAG AI Document Assistant"
+  description: "LLM-powered document Q&A system using FastAPI and LangChain"
+  author: "Avinash Reddy"
+  date: 2025-01-01
+  image: ../images/project1.png
+  categories: [AI, Python, FastAPI]
 
-- title: RAG-Powered Document Q&A Assistant
-  description: Project on frone
-  path: list/project2.qmd
+- title: "Revenue Analytics Dashboard"
+  description: "BigQuery + Next.js analytics system for real-time insights"
+  author: "Avinash Reddy"
+  date: 2024-06-01
+  image: ../images/project2.png
+  categories: [Data, SQL, Next.js]

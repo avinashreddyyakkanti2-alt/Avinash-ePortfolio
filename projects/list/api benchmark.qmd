@@ -1,0 +1,107 @@
+---
+title: "FastAPI vs Express: A Latency Simulation"
+subtitle: "Statistical comparison of two backends under load using a Monte-Carlo simulation"
+date: "2026-04-05"
+categories: [python, fastapi, benchmark, statistics]
+image: cover.png
+reading-time: true
+format:
+  html:
+    code-fold: show
+    code-tools: true
+    highlight-style: github
+jupyter: python3
+---
+
+## Why this project
+
+As a full-stack developer who uses both Node.js and Python in production, I'm
+often asked *"which is faster?"*. The honest answer: **it depends on the
+workload**. Here I simulate two APIs with different latency profiles and
+compare them statistically.
+
+## Simulation model
+
+Real API latency is not normally distributed — it's heavy-tailed with
+occasional slow requests (GC pauses, network blips). We model each backend
+with a **log-normal distribution**.
+
+```{python}
+#| label: setup
+import numpy as np
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+rng = np.random.default_rng(7)
+N = 10_000
+
+# μ and σ chosen so medians are realistic for a warm, local service
+express   = rng.lognormal(mean=np.log(18), sigma=0.35, size=N)  # ms
+fastapi   = rng.lognormal(mean=np.log(22), sigma=0.55, size=N)  # ms
+
+bench = pd.DataFrame({
+    "latency_ms": np.concatenate([express, fastapi]),
+    "backend":    ["Express"] * N + ["FastAPI"] * N,
+})
+bench.head()
+```
+
+## Distribution shape
+
+```{python}
+#| label: fig-dist
+#| fig-cap: "Latency distribution per backend (log-x)"
+fig = px.histogram(
+    bench, x="latency_ms", color="backend",
+    nbins=80, barmode="overlay", opacity=0.65,
+    log_x=True, template="plotly_white",
+    title="Latency distributions (N=10,000 per backend)",
+)
+fig.update_layout(height=420)
+fig.show()
+```
+
+## Percentile table
+
+Tail latency matters far more than the mean — here are the classic SRE
+percentiles.
+
+```{python}
+#| label: tbl-pct
+pct = (
+    bench.groupby("backend")["latency_ms"]
+         .describe(percentiles=[.5, .9, .95, .99])
+         .round(2)
+)
+pct
+```
+
+## Statistical test
+
+Is the difference in medians statistically significant?
+
+```{python}
+#| label: mannwhitney
+from scipy import stats
+u, p = stats.mannwhitneyu(express, fastapi, alternative="two-sided")
+print(f"Mann–Whitney U = {u:,.0f}")
+print(f"p-value        = {p:.3e}")
+```
+
+## What the numbers tell us
+
+::: {.callout-important title="Interpretation"}
+Express has a slightly lower **median** latency, but FastAPI's distribution
+has a **heavier right tail** under this simulation — meaning FastAPI is more
+variable here. In a real system you would measure the actual service, not
+simulate — but the **methodology** (percentiles + non-parametric tests)
+is what matters and transfers directly to production benchmarking.
+:::
+
+## What I practiced
+
+- **Plotly** overlay histograms and custom layout
+- **SciPy** non-parametric hypothesis testing
+- Translating **SRE vocabulary** (p50 / p95 / p99) into code
+- Separating methodology from the specific numbers

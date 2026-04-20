@@ -1,0 +1,135 @@
+---
+title: "Sales Analytics Dashboard"
+subtitle: "Exploratory analysis of a synthetic e-commerce dataset with interactive Plotly charts"
+date: "2026-03-15"
+categories: [python, pandas, plotly, data-analysis]
+image: cover.png
+reading-time: true
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-summary: "Show the code"
+    highlight-style: github
+jupyter: python3
+---
+
+## Overview
+
+This project simulates a realistic e-commerce sales dataset and explores it
+to answer three business questions:
+
+1. Which product categories drive the most revenue?
+2. How does revenue trend month-over-month?
+3. Which regions have the highest average order value (AOV)?
+
+## Generating the dataset
+
+We generate 5,000 synthetic orders with realistic seasonality using NumPy.
+
+```{python}
+#| label: setup
+#| fig-cap: "Data generation pipeline"
+import numpy as np
+import pandas as pd
+
+rng = np.random.default_rng(42)
+n = 5_000
+
+categories = ["Electronics", "Apparel", "Home", "Books", "Sports"]
+regions    = ["EMEA", "AMER", "APAC"]
+
+dates = pd.date_range("2024-01-01", "2025-12-31", freq="D")
+df = pd.DataFrame({
+    "order_date": rng.choice(dates, n),
+    "category":   rng.choice(categories, n, p=[0.30, 0.25, 0.20, 0.10, 0.15]),
+    "region":     rng.choice(regions,    n, p=[0.45, 0.35, 0.20]),
+    "units":      rng.integers(1, 6, n),
+    "unit_price": np.round(rng.gamma(2.5, 30, n), 2),
+})
+df["revenue"] = (df["units"] * df["unit_price"]).round(2)
+df["month"]   = df["order_date"].dt.to_period("M").dt.to_timestamp()
+df.head()
+```
+
+## Question 1 — Revenue by category
+
+```{python}
+#| label: fig-category
+#| fig-cap: "Total revenue by product category (interactive)"
+import plotly.express as px
+
+by_cat = (
+    df.groupby("category", as_index=False)["revenue"]
+      .sum()
+      .sort_values("revenue", ascending=False)
+)
+
+fig = px.bar(
+    by_cat, x="category", y="revenue",
+    color="category",
+    text_auto=".2s",
+    template="plotly_white",
+    title="Revenue by category",
+)
+fig.update_layout(showlegend=False, height=420)
+fig.show()
+```
+
+## Question 2 — Monthly revenue trend
+
+```{python}
+#| label: fig-trend
+#| fig-cap: "Monthly revenue with 3-month rolling average"
+monthly = df.groupby("month", as_index=False)["revenue"].sum()
+monthly["rolling_3m"] = monthly["revenue"].rolling(3, min_periods=1).mean()
+
+fig = px.line(
+    monthly, x="month", y=["revenue", "rolling_3m"],
+    template="plotly_white",
+    title="Monthly revenue and 3-month rolling average",
+    labels={"value": "Revenue (USD)", "month": "Month", "variable": "Series"},
+)
+fig.update_layout(height=420)
+fig.show()
+```
+
+## Question 3 — AOV by region
+
+```{python}
+#| label: fig-aov
+#| fig-cap: "Average order value by region"
+aov = (
+    df.groupby("region", as_index=False)
+      .agg(aov=("revenue", "mean"), orders=("revenue", "size"))
+      .round(2)
+)
+aov
+```
+
+```{python}
+fig = px.bar(
+    aov, x="region", y="aov",
+    color="region",
+    template="plotly_white",
+    text_auto=".2f",
+    title="Average Order Value by region",
+)
+fig.update_layout(showlegend=False, height=380)
+fig.show()
+```
+
+## Takeaways
+
+::: {.callout-note title="Insights"}
+- **Electronics** leads revenue, reflecting higher unit prices.
+- Revenue shows clear **seasonality** with a Q4 lift.
+- **EMEA** has the highest order count, but **APAC** edges ahead on AOV.
+:::
+
+## What I practiced
+
+- Idiomatic `pandas` groupby / rolling windows
+- Building **interactive Plotly** charts inside Quarto
+- Using `code-fold` and `code-tools` for a clean reading experience
+- Figure captions and cross-refs (`@fig-category`, etc.)

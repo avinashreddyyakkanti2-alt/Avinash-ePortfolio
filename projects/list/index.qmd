@@ -1,0 +1,41 @@
+---
+title: "Projects"
+---
+
+## My Projects
+
+Below are some of the projects I have worked on.
+
+---
+
+<div class="grid">
+
+<div class="g-col-6 g-col-md-6">
+<div class="card">
+
+### FastAPI vs Express: A Latency Simulation
+
+LLM-powered document Q&A system using FastAPI and LangChain.
+
+**Tech Stack:** Python, FastAPI, LangChain
+
+[View Project](api benchmark.qmd)
+
+</div>
+</div>
+
+<div class="g-col-6 g-col-md-6">
+<div class="card">
+
+###  Revenue Analytics Dashboard
+
+BigQuery + Next.js analytics system for real-time insights.
+
+**Tech Stack:** SQL, BigQuery, Next.js
+
+[View Project](amazon.qmd)
+
+</div>
+</div>
+
+</div>
