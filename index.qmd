@@ -20,12 +20,13 @@ about:
       target: _blank
     - icon: github
       text: GitHub
-      href: https://github.com/yourusername
+      href: https://github.com/avinashreddy11105
       target: _blank
     - icon: file-earmark-pdf-fill
       text: CV
       href: cv/AvinashReddy_CV.pdf
       target: _blank
+    
     
 
 listing:

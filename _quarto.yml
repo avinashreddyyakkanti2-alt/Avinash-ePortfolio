@@ -16,7 +16,7 @@ website:
         file: cv/Avinash_cv.pdf
         target: _blank
       - reflection.qmd
-
+      - contact.qmd
       
 
 

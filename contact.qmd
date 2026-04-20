@@ -1,0 +1,30 @@
+---
+title: "Get in touch"
+---
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+## Let's chat
+
+I reply to email within a working day. If you're reaching out about
+**full-stack engineering roles**, **freelance Python/FastAPI work**, or
+just want to discuss a technical idea - I'd love to hear from you.
+
+- {{< fa envelope >}} [avinashyakkanti12.com](mailto:avinashyakkanti12@gmail.com)
+- {{< fa brands linkedin >}} [LinkedIn](https://www.linkedin.com/in/<your-handle>)
+- {{< fa brands github >}} [GitHub](https://github.com/<your-username>)
+:::
+
+::: {.g-col-12 .g-col-md-6}
+## Based in
+
+Dublin, Ireland 🇮🇪 — available for remote work across EMEA time zones.
+
+::: {.callout-tip}
+The fastest way to reach me is **LinkedIn**. I screen email for newsletters,
+so direct messages cut through faster.
+:::
+:::
+
+:::

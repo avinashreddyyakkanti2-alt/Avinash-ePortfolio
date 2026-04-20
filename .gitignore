@@ -19,7 +19,6 @@ Thumbs.db
 
 # Large data files (optional but recommended for assignment safety)
 *.zip
-*.csv
 *.xlsx
 *.json
 *.parquet
