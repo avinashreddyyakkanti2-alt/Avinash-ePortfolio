@@ -5,7 +5,7 @@ description: "Answering three revenue questions with pandas groupby, rolling win
 author: "Avinash Reddy"
 date: "2026-03-15"
 categories: [python, pandas, plotly, data-analysis]
-image: ../../images/profile.png
+image: ../../images/sales.jpg
 image-alt: "Sales analytics dashboard cover"
 reading-time: true
 format:

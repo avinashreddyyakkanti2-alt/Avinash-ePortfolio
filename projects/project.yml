@@ -6,8 +6,19 @@
   categories: [AI, Python, FastAPI]
 
 - title: "Revenue Analytics Dashboard"
-  description: "BigQuery + Next.js analytics system for real-time insights"
+  description: "Data analytics system for real-time insights"
   author: "Avinash Reddy"
   date: 2024-06-01
-  image: ../images/project2.png
-  categories: [Data, SQL, Next.js]
+  image: ../images/sales.png
+  categories: [Data, SQL, Python]
+
+- title: "Revenue Optimisation Calculator"
+  subtitle: "Real-time forecasting tool for publisher ad-revenue uplift — Next.js 14 + BigQuery"
+  description: "Production forecasting tool deployed for DataBeat. 40% faster load times, 35% faster BigQuery queries on 1M+ row datasets."
+  author: "Avinash Reddy"
+  date: "2024-11-20"
+  categories: [nextjs, bigquery, nodejs, production, tailwind]
+  image: ../../images/2.jpg
+  image-alt: "Revenue Optimisation Calculator"
+  path: "https://calculator.databeat.io/"
+  target: _blank

@@ -1,41 +1,46 @@
 ---
 title: "Projects"
+subtitle: "Work at the intersection of engineering and analytics"
+
+listing:
+  id: local-projects
+  type: grid
+  grid-columns: 3
+  image-height: 200px
+  sort: "date desc"
+  categories: true
+  sort-ui: [date, title]
+  filter-ui: true
+  fields: [image, date, title, subtitle, categories, reading-time]
+  feed: true
+  contents:
+    - "Sales Analytics Dashboard.qmd"
+    - "api benchmark.qmd"
+    - title: "Revenue Optimisation Calculator"
+      subtitle: "Real-time forecasting tool for publisher ad-revenue uplift - Next.js 14 + BigQuery"
+      image: "../../images/2.jpg"
+      path: "https://calculator.databeat.io/"
+      date: 2024-11-20
+      categories:
+        - nextjs
+        - bigquery
+        - nodejs
+        - production
+
+page-layout: full
+toc: false
 ---
 
-## My Projects
+A mix of **reproducible analytics** and **production engineering**.
 
-Below are some of the projects I have worked on.
+The projects below are fully reproducible where possible - charts and outputs are generated dynamically using Quarto. The production tool is deployed live.
 
----
+::: {.callout-tip icon=false collapse="true"}
+### How to explore
+Use category filters, search box, or sort options above the grid to navigate projects.
+:::
 
-<div class="grid">
+## Analytics & Engineering Projects
 
-<div class="g-col-6 g-col-md-6">
-<div class="card">
-
-### FastAPI vs Express: A Latency Simulation
-
-LLM-powered document Q&A system using FastAPI and LangChain.
-
-**Tech Stack:** Python, FastAPI, LangChain
-
-[View Project](api benchmark.qmd)
-
-</div>
-</div>
-
-<div class="g-col-6 g-col-md-6">
-<div class="card">
-
-###  Revenue Analytics Dashboard
-
-BigQuery + Next.js analytics system for real-time insights.
-
-**Tech Stack:** SQL, BigQuery, Next.js
-
-[View Project](Sales Analytics Dashboard.qmd)
-
-</div>
-</div>
-
-</div>
+::: {#local-projects}
+:::

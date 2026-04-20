@@ -5,7 +5,7 @@ description: "Modelling API tail latency with log-normal distributions and testi
 author: "Avinash Reddy"
 date: "2026-04-05"
 categories: [python, fastapi, benchmark, statistics]
-image: ../../images/profile.png
+image: ../../images/1.jpg
 image-alt: "API benchmark cover"
 reading-time: true
 format:

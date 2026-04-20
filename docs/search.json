@@ -53,14 +53,14 @@
     "href": "projects/list/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
+    "text": "A mix of reproducible analytics and production engineering.\nThe projects below are fully reproducible where possible - charts and outputs are generated dynamically using Quarto. The production tool is deployed live."
   },
   {
-    "objectID": "projects/list/index.html#my-projects",
-    "href": "projects/list/index.html#my-projects",
+    "objectID": "projects/list/index.html#analytics-engineering-projects",
+    "href": "projects/list/index.html#analytics-engineering-projects",
     "title": "Projects",
-    "section": "",
-    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
+    "section": "Analytics & Engineering Projects",
+    "text": "Analytics & Engineering Projects\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nFastAPI vs Express: A Latency Simulation\n\n\nStatistical comparison of two backends under load using a Monte-Carlo simulation\n\n3 min\n\n\npython\n\nfastapi\n\nbenchmark\n\nstatistics\n\n\n\n\nApr 5, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nSales Analytics Dashboard\n\n\nExploratory analysis of a synthetic e-commerce dataset with interactive Plotly charts\n\n3 min\n\n\npython\n\npandas\n\nplotly\n\ndata-analysis\n\n\n\n\nMar 15, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nRevenue Optimisation Calculator\n\n\nReal-time forecasting tool for publisher ad-revenue uplift - Next.js 14 + BigQuery\n\n\n\nnextjs\n\nbigquery\n\nnodejs\n\nproduction\n\n\n\n\nNov 20, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
