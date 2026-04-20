@@ -18,7 +18,7 @@ or a technical idea you want to discuss - I'd love to hear from you.
 
 - {{< fa envelope >}} &nbsp; [yakkantiavinash6@gmail.com](mailto:yakkantiavinash6@gmail.com)
 - {{< fa brands linkedin >}} &nbsp; [linkedin.com/in/avinashreddy11105](https://linkedin.com/in/avinashreddy11105)
-- {{< fa brands github >}} &nbsp; [github.com/avinashreddy11105](https://github.com/avinashreddy11105)
+- {{< fa brands github >}} &nbsp; [github.com/avinashreddy11105](https://github.com/avinashreddy-11105)
 
 :::
 
