@@ -49,60 +49,18 @@
     "text": "Next steps\n\nDeploy a v2 of the site with an MDX-style blog\nWire up GitHub Actions to auto-deploy on push (done in Module 9)\nPublish the code behind each project as a standalone GitHub repo"
   },
   {
-    "objectID": "projects/list/api benchmark.html",
-    "href": "projects/list/api benchmark.html",
-    "title": "FastAPI vs Express: A Latency Simulation",
+    "objectID": "projects/list/index.html",
+    "href": "projects/list/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "As a full-stack developer who uses both Node.js and Python in production, I’m often asked “which is faster?”. The honest answer: it depends on the workload. Here I simulate two APIs with different latency profiles and compare them statistically."
+    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
   },
   {
-    "objectID": "projects/list/api benchmark.html#why-this-project",
-    "href": "projects/list/api benchmark.html#why-this-project",
-    "title": "FastAPI vs Express: A Latency Simulation",
+    "objectID": "projects/list/index.html#my-projects",
+    "href": "projects/list/index.html#my-projects",
+    "title": "Projects",
     "section": "",
-    "text": "As a full-stack developer who uses both Node.js and Python in production, I’m often asked “which is faster?”. The honest answer: it depends on the workload. Here I simulate two APIs with different latency profiles and compare them statistically."
-  },
-  {
-    "objectID": "projects/list/api benchmark.html#simulation-model",
-    "href": "projects/list/api benchmark.html#simulation-model",
-    "title": "FastAPI vs Express: A Latency Simulation",
-    "section": "Simulation model",
-    "text": "Simulation model\nReal API latency is not normally distributed — it’s heavy-tailed with occasional slow requests (GC pauses, network blips). We model each backend with a log-normal distribution.\n\n\nCode\nimport numpy as np\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\n\nrng = np.random.default_rng(7)\nN = 10_000\n\n# μ and σ chosen so medians are realistic for a warm, local service\nexpress   = rng.lognormal(mean=np.log(18), sigma=0.35, size=N)  # ms\nfastapi   = rng.lognormal(mean=np.log(22), sigma=0.55, size=N)  # ms\n\nbench = pd.DataFrame({\n    \"latency_ms\": np.concatenate([express, fastapi]),\n    \"backend\":    [\"Express\"] * N + [\"FastAPI\"] * N,\n})\nbench.head()\n\n\n\n\n\n\n\n\n\nlatency_ms\nbackend\n\n\n\n\n0\n18.007752\nExpress\n\n\n1\n19.984015\nExpress\n\n\n2\n16.353199\nExpress\n\n\n3\n13.179527\nExpress\n\n\n4\n15.351865\nExpress"
-  },
-  {
-    "objectID": "projects/list/api benchmark.html#distribution-shape",
-    "href": "projects/list/api benchmark.html#distribution-shape",
-    "title": "FastAPI vs Express: A Latency Simulation",
-    "section": "Distribution shape",
-    "text": "Distribution shape\n\n\nCode\nfig = px.histogram(\n    bench, x=\"latency_ms\", color=\"backend\",\n    nbins=80, barmode=\"overlay\", opacity=0.65,\n    log_x=True, template=\"plotly_white\",\n    title=\"Latency distributions (N=10,000 per backend)\",\n)\nfig.update_layout(height=420)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Latency distribution per backend (log-x)"
-  },
-  {
-    "objectID": "projects/list/api benchmark.html#percentile-table",
-    "href": "projects/list/api benchmark.html#percentile-table",
-    "title": "FastAPI vs Express: A Latency Simulation",
-    "section": "Percentile table",
-    "text": "Percentile table\nTail latency matters far more than the mean — here are the classic SRE percentiles.\n\n\nCode\npct = (\n    bench.groupby(\"backend\")[\"latency_ms\"]\n         .describe(percentiles=[.5, .9, .95, .99])\n         .round(2)\n)\npct\n\n\n\n\nTable 1\n\n\n\n\n\n\n\n\n\n\ncount\nmean\nstd\nmin\n50%\n90%\n95%\n99%\nmax\n\n\nbackend\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpress\n10000.0\n19.04\n6.84\n5.00\n17.92\n27.97\n31.84\n40.18\n74.58\n\n\nFastAPI\n10000.0\n25.50\n14.92\n3.22\n21.90\n44.26\n53.99\n78.07\n187.47"
-  },
-  {
-    "objectID": "projects/list/api benchmark.html#statistical-test",
-    "href": "projects/list/api benchmark.html#statistical-test",
-    "title": "FastAPI vs Express: A Latency Simulation",
-    "section": "Statistical test",
-    "text": "Statistical test\nIs the difference in medians statistically significant?\n\n\nCode\nfrom scipy import stats\nu, p = stats.mannwhitneyu(express, fastapi, alternative=\"two-sided\")\nprint(f\"Mann–Whitney U = {u:,.0f}\")\nprint(f\"p-value        = {p:.3e}\")\n\n\nMann–Whitney U = 37,586,827\np-value        = 4.692e-203"
-  },
-  {
-    "objectID": "projects/list/api benchmark.html#what-the-numbers-tell-us",
-    "href": "projects/list/api benchmark.html#what-the-numbers-tell-us",
-    "title": "FastAPI vs Express: A Latency Simulation",
-    "section": "What the numbers tell us",
-    "text": "What the numbers tell us\n\n\n\n\n\n\nImportantInterpretation\n\n\n\nExpress has a slightly lower median latency, but FastAPI’s distribution has a heavier right tail under this simulation — meaning FastAPI is more variable here. In a real system you would measure the actual service, not simulate — but the methodology (percentiles + non-parametric tests) is what matters and transfers directly to production benchmarking."
-  },
-  {
-    "objectID": "projects/list/api benchmark.html#what-i-practiced",
-    "href": "projects/list/api benchmark.html#what-i-practiced",
-    "title": "FastAPI vs Express: A Latency Simulation",
-    "section": "What I practiced",
-    "text": "What I practiced\n\nPlotly overlay histograms and custom layout\nSciPy non-parametric hypothesis testing\nTranslating SRE vocabulary (p50 / p95 / p99) into code\nSeparating methodology from the specific numbers"
+    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
   },
   {
     "objectID": "index.html",
@@ -196,73 +154,150 @@
     "text": "Dublin, Ireland 🇮🇪 — available for remote work across EMEA time zones.\n\n\n\n\n\n\nTip\n\n\n\nThe fastest way to reach me is LinkedIn. I screen email for newsletters, so direct messages cut through faster."
   },
   {
-    "objectID": "projects/list/amazon.html",
-    "href": "projects/list/amazon.html",
-    "title": "Sales Analytics Dashboard",
+    "objectID": "projects/list/api benchmark.html",
+    "href": "projects/list/api benchmark.html",
+    "title": "FastAPI vs Express: A Latency Simulation",
     "section": "",
-    "text": "This project simulates a realistic e-commerce sales dataset and explores it to answer three business questions:\n\nWhich product categories drive the most revenue?\nHow does revenue trend month-over-month?\nWhich regions have the highest average order value (AOV)?"
+    "text": "As a full-stack developer who uses both Node.js and Python in production, I’m often asked “which is faster?”. The honest answer: it depends on the workload. Here I simulate two APIs with different latency profiles and compare them statistically — which is the analytical discipline I’m building through my MSc.\n\n\n\n\n\n\nImportantWhat this is — and isn’t\n\n\n\nThis is a simulation for demonstrating statistical methodology, not a production benchmark. Real numbers would come from load-testing tools (k6, Locust) against your actual service. The method — percentiles plus non-parametric tests — is what transfers."
   },
   {
-    "objectID": "projects/list/amazon.html#overview",
-    "href": "projects/list/amazon.html#overview",
-    "title": "Sales Analytics Dashboard",
+    "objectID": "projects/list/api benchmark.html#why-this-project",
+    "href": "projects/list/api benchmark.html#why-this-project",
+    "title": "FastAPI vs Express: A Latency Simulation",
     "section": "",
-    "text": "This project simulates a realistic e-commerce sales dataset and explores it to answer three business questions:\n\nWhich product categories drive the most revenue?\nHow does revenue trend month-over-month?\nWhich regions have the highest average order value (AOV)?"
+    "text": "As a full-stack developer who uses both Node.js and Python in production, I’m often asked “which is faster?”. The honest answer: it depends on the workload. Here I simulate two APIs with different latency profiles and compare them statistically — which is the analytical discipline I’m building through my MSc.\n\n\n\n\n\n\nImportantWhat this is — and isn’t\n\n\n\nThis is a simulation for demonstrating statistical methodology, not a production benchmark. Real numbers would come from load-testing tools (k6, Locust) against your actual service. The method — percentiles plus non-parametric tests — is what transfers."
   },
   {
-    "objectID": "projects/list/amazon.html#generating-the-dataset",
-    "href": "projects/list/amazon.html#generating-the-dataset",
+    "objectID": "projects/list/api benchmark.html#latency-in-tail-probability",
+    "href": "projects/list/api benchmark.html#latency-in-tail-probability",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Latency in tail probability",
+    "text": "Latency in tail probability\nReal API latency is heavy-tailed — slow requests matter disproportionately for user experience. The 99th percentile latency (the slowest 1%) is often orders of magnitude above the median:\n\\[\nP_{99} = \\inf \\{ x \\in \\mathbb{R} : F(x) \\geq 0.99 \\}\n\\]\nwhere \\(F\\) is the cumulative distribution of response times."
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#simulation-model",
+    "href": "projects/list/api benchmark.html#simulation-model",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Simulation model",
+    "text": "Simulation model\nWe model each backend with a log-normal distribution. This captures the occasional slow requests (GC pauses, network blips) that a normal distribution would miss.\n\n\nCode\nimport numpy as np\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\n\nrng = np.random.default_rng(7)\nN = 10_000\n\n# μ and σ chosen so medians are realistic for a warm, local service\nexpress   = rng.lognormal(mean=np.log(18), sigma=0.35, size=N)  # ms\nfastapi   = rng.lognormal(mean=np.log(22), sigma=0.55, size=N)  # ms\n\nbench = pd.DataFrame({\n    \"latency_ms\": np.concatenate([express, fastapi]),\n    \"backend\":    [\"Express\"] * N + [\"FastAPI\"] * N,\n})\nbench.head()\n\n\n\n\n\n\n\n\n\nlatency_ms\nbackend\n\n\n\n\n0\n18.007752\nExpress\n\n\n1\n19.984015\nExpress\n\n\n2\n16.353199\nExpress\n\n\n3\n13.179527\nExpress\n\n\n4\n15.351865\nExpress"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#distribution-shape",
+    "href": "projects/list/api benchmark.html#distribution-shape",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Distribution shape",
+    "text": "Distribution shape\n\n\nCode\nfig = px.histogram(\n    bench, x=\"latency_ms\", color=\"backend\",\n    nbins=80, barmode=\"overlay\", opacity=0.65,\n    log_x=True, template=\"plotly_white\",\n    title=\"Latency distributions (N=10,000 per backend)\",\n)\nfig.update_layout(height=420)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Latency distribution per backend (log-x axis)"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#percentile-table",
+    "href": "projects/list/api benchmark.html#percentile-table",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Percentile table",
+    "text": "Percentile table\nTail latency matters more than the mean. These are the classic SRE percentiles:\n\n\nCode\npct = (\n    bench.groupby(\"backend\")[\"latency_ms\"]\n         .describe(percentiles=[.5, .9, .95, .99])\n         .round(2)\n)\npct\n\n\n\n\nTable 1\n\n\n\n\n\n\n\n\n\n\ncount\nmean\nstd\nmin\n50%\n90%\n95%\n99%\nmax\n\n\nbackend\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpress\n10000.0\n19.04\n6.84\n5.00\n17.92\n27.97\n31.84\n40.18\n74.58\n\n\nFastAPI\n10000.0\n25.50\n14.92\n3.22\n21.90\n44.26\n53.99\n78.07\n187.47"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#is-the-difference-real",
+    "href": "projects/list/api benchmark.html#is-the-difference-real",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Is the difference real?",
+    "text": "Is the difference real?\nWe use the Mann–Whitney U test — a non-parametric test that doesn’t assume normality, which is appropriate for skewed latency distributions:\n\n\nCode\nfrom scipy import stats\nu, p = stats.mannwhitneyu(express, fastapi, alternative=\"two-sided\")\nprint(f\"Mann–Whitney U = {u:,.0f}\")\nprint(f\"p-value        = {p:.3e}\")\n\n\nMann–Whitney U = 37,586,827\np-value        = 4.692e-203"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#interpretation",
+    "href": "projects/list/api benchmark.html#interpretation",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Interpretation",
+    "text": "Interpretation\n\n\n\n\n\n\nNoteWhat the numbers tell us\n\n\n\nExpress has a slightly lower median latency, but FastAPI’s distribution has a heavier right tail under this simulation — meaning FastAPI is more variable here. The p-value is vanishingly small, confirming the difference isn’t due to chance.\nIn a real system you would measure the actual service, not simulate — but the methodology (percentiles + non-parametric tests) is what matters and transfers directly to production benchmarking."
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#what-i-practiced",
+    "href": "projects/list/api benchmark.html#what-i-practiced",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "What I practiced",
+    "text": "What I practiced\n\nPlotly overlay histograms with log-scale axes\nSciPy non-parametric hypothesis testing\nTranslating SRE vocabulary (p50 / p95 / p99) into code\nSeparating methodology from the specific numbers\nLaTeX equations for formal definitions"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#references-attributions",
+    "href": "projects/list/api benchmark.html#references-attributions",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "References & attributions",
+    "text": "References & attributions\n\nGregg, B. (2014). Systems Performance: Enterprise and the Cloud. — chapter on latency percentiles.\nSciPy mannwhitneyu — https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html\nPlotly Express histogram docs — https://plotly.com/python/histograms/"
+  },
+  {
+    "objectID": "projects/list/Sales Analytics Dashboard.html",
+    "href": "projects/list/Sales Analytics Dashboard.html",
+    "title": "Sales Analytics Dashboard",
+    "section": "",
+    "text": "This project simulates a realistic e-commerce sales dataset and explores it to answer three business questions:\n\nWhich product categories drive the most revenue?\nHow does revenue trend month-over-month?\nWhich regions have the highest average order value (AOV)?\n\n\n\n\n\n\n\nNoteWhy synthetic data?\n\n\n\nWorking with synthetic data lets me publish the full analysis without leaking sensitive numbers from any employer or client, while still demonstrating real pandas, Plotly, and statistical reasoning skills."
+  },
+  {
+    "objectID": "projects/list/Sales Analytics Dashboard.html#overview",
+    "href": "projects/list/Sales Analytics Dashboard.html#overview",
+    "title": "Sales Analytics Dashboard",
+    "section": "",
+    "text": "This project simulates a realistic e-commerce sales dataset and explores it to answer three business questions:\n\nWhich product categories drive the most revenue?\nHow does revenue trend month-over-month?\nWhich regions have the highest average order value (AOV)?\n\n\n\n\n\n\n\nNoteWhy synthetic data?\n\n\n\nWorking with synthetic data lets me publish the full analysis without leaking sensitive numbers from any employer or client, while still demonstrating real pandas, Plotly, and statistical reasoning skills."
+  },
+  {
+    "objectID": "projects/list/Sales Analytics Dashboard.html#the-analytical-workflow",
+    "href": "projects/list/Sales Analytics Dashboard.html#the-analytical-workflow",
+    "title": "Sales Analytics Dashboard",
+    "section": "The analytical workflow",
+    "text": "The analytical workflow\n\n\n\n\n\nflowchart LR\n    A[Generate synthetic&lt;br/&gt;orders with NumPy] --&gt; B[Load into pandas&lt;br/&gt;DataFrame]\n    B --&gt; C[Group & aggregate]\n    C --&gt; D[Visualise with&lt;br/&gt;Plotly]\n    D --&gt; E[Surface insights]\n    style A fill:#0F4C81,color:#fff\n    style E fill:#FFA552,color:#000"
+  },
+  {
+    "objectID": "projects/list/Sales Analytics Dashboard.html#revenue-calculation",
+    "href": "projects/list/Sales Analytics Dashboard.html#revenue-calculation",
+    "title": "Sales Analytics Dashboard",
+    "section": "Revenue calculation",
+    "text": "Revenue calculation\nRevenue is computed per order as:\n\\[\nR_i = u_i \\cdot p_i\n\\]\nwhere \\(u_i\\) is units sold and \\(p_i\\) is unit price. Monthly revenue is the sum across all orders in month \\(m\\):\n\\[\nR_m = \\sum_{i \\in m} R_i\n\\]"
+  },
+  {
+    "objectID": "projects/list/Sales Analytics Dashboard.html#generating-the-dataset",
+    "href": "projects/list/Sales Analytics Dashboard.html#generating-the-dataset",
     "title": "Sales Analytics Dashboard",
     "section": "Generating the dataset",
     "text": "Generating the dataset\nWe generate 5,000 synthetic orders with realistic seasonality using NumPy.\n\n\nShow the code\nimport numpy as np\nimport pandas as pd\n\nrng = np.random.default_rng(42)\nn = 5_000\n\ncategories = [\"Electronics\", \"Apparel\", \"Home\", \"Books\", \"Sports\"]\nregions    = [\"EMEA\", \"AMER\", \"APAC\"]\n\ndates = pd.date_range(\"2024-01-01\", \"2025-12-31\", freq=\"D\")\ndf = pd.DataFrame({\n    \"order_date\": rng.choice(dates, n),\n    \"category\":   rng.choice(categories, n, p=[0.30, 0.25, 0.20, 0.10, 0.15]),\n    \"region\":     rng.choice(regions,    n, p=[0.45, 0.35, 0.20]),\n    \"units\":      rng.integers(1, 6, n),\n    \"unit_price\": np.round(rng.gamma(2.5, 30, n), 2),\n})\ndf[\"revenue\"] = (df[\"units\"] * df[\"unit_price\"]).round(2)\ndf[\"month\"]   = df[\"order_date\"].dt.to_period(\"M\").dt.to_timestamp()\ndf.head()\n\n\n\n\n\n\n\n\n\norder_date\ncategory\nregion\nunits\nunit_price\nrevenue\nmonth\n\n\n\n\n0\n2024-03-06\nElectronics\nAMER\n5\n150.68\n753.40\n2024-03-01\n\n\n1\n2025-07-19\nHome\nAMER\n4\n80.71\n322.84\n2025-07-01\n\n\n2\n2025-04-23\nSports\nEMEA\n3\n178.89\n536.67\n2025-04-01\n\n\n3\n2024-11-16\nBooks\nEMEA\n1\n81.10\n81.10\n2024-11-01\n\n\n4\n2024-11-12\nElectronics\nAMER\n1\n47.78\n47.78\n2024-11-01\n\n\n\n\n\nData generation pipeline"
   },
   {
-    "objectID": "projects/list/amazon.html#question-1-revenue-by-category",
-    "href": "projects/list/amazon.html#question-1-revenue-by-category",
+    "objectID": "projects/list/Sales Analytics Dashboard.html#question-1-revenue-by-category",
+    "href": "projects/list/Sales Analytics Dashboard.html#question-1-revenue-by-category",
     "title": "Sales Analytics Dashboard",
     "section": "Question 1 — Revenue by category",
     "text": "Question 1 — Revenue by category\n\n\nShow the code\nimport plotly.express as px\n\nby_cat = (\n    df.groupby(\"category\", as_index=False)[\"revenue\"]\n      .sum()\n      .sort_values(\"revenue\", ascending=False)\n)\n\nfig = px.bar(\n    by_cat, x=\"category\", y=\"revenue\",\n    color=\"category\",\n    text_auto=\".2s\",\n    template=\"plotly_white\",\n    title=\"Revenue by category\",\n)\nfig.update_layout(showlegend=False, height=420)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Total revenue by product category (interactive)"
   },
   {
-    "objectID": "projects/list/amazon.html#question-2-monthly-revenue-trend",
-    "href": "projects/list/amazon.html#question-2-monthly-revenue-trend",
+    "objectID": "projects/list/Sales Analytics Dashboard.html#question-2-monthly-revenue-trend",
+    "href": "projects/list/Sales Analytics Dashboard.html#question-2-monthly-revenue-trend",
     "title": "Sales Analytics Dashboard",
     "section": "Question 2 — Monthly revenue trend",
     "text": "Question 2 — Monthly revenue trend\n\n\nShow the code\nmonthly = df.groupby(\"month\", as_index=False)[\"revenue\"].sum()\nmonthly[\"rolling_3m\"] = monthly[\"revenue\"].rolling(3, min_periods=1).mean()\n\nfig = px.line(\n    monthly, x=\"month\", y=[\"revenue\", \"rolling_3m\"],\n    template=\"plotly_white\",\n    title=\"Monthly revenue and 3-month rolling average\",\n    labels={\"value\": \"Revenue (USD)\", \"month\": \"Month\", \"variable\": \"Series\"},\n)\nfig.update_layout(height=420)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 2: Monthly revenue with 3-month rolling average"
   },
   {
-    "objectID": "projects/list/amazon.html#question-3-aov-by-region",
-    "href": "projects/list/amazon.html#question-3-aov-by-region",
+    "objectID": "projects/list/Sales Analytics Dashboard.html#question-3-aov-by-region",
+    "href": "projects/list/Sales Analytics Dashboard.html#question-3-aov-by-region",
     "title": "Sales Analytics Dashboard",
     "section": "Question 3 — AOV by region",
-    "text": "Question 3 — AOV by region\n\n\nShow the code\naov = (\n    df.groupby(\"region\", as_index=False)\n      .agg(aov=(\"revenue\", \"mean\"), orders=(\"revenue\", \"size\"))\n      .round(2)\n)\naov\n\n\n\n\n\n\n\n\n\n\n\nregion\naov\norders\n\n\n\n\n0\nAMER\n230.21\n1781\n\n\n1\nAPAC\n238.54\n982\n\n\n2\nEMEA\n228.24\n2237\n\n\n\n\n\n\n\nFigure 3: Average order value by region\n\n\n\n\n\n\nShow the code\nfig = px.bar(\n    aov, x=\"region\", y=\"aov\",\n    color=\"region\",\n    template=\"plotly_white\",\n    text_auto=\".2f\",\n    title=\"Average Order Value by region\",\n)\nfig.update_layout(showlegend=False, height=380)\nfig.show()"
+    "text": "Question 3 — AOV by region\n\n\nShow the code\naov = (\n    df.groupby(\"region\", as_index=False)\n      .agg(aov=(\"revenue\", \"mean\"), orders=(\"revenue\", \"size\"))\n      .round(2)\n)\naov\n\n\n\n\nTable 1\n\n\n\n\n\n\n\n\n\n\nregion\naov\norders\n\n\n\n\n0\nAMER\n230.21\n1781\n\n\n1\nAPAC\n238.54\n982\n\n\n2\nEMEA\n228.24\n2237\n\n\n\n\n\n\n\n\n\n\n\n\nShow the code\nfig = px.bar(\n    aov, x=\"region\", y=\"aov\",\n    color=\"region\",\n    template=\"plotly_white\",\n    text_auto=\".2f\",\n    title=\"Average Order Value by region\",\n)\nfig.update_layout(showlegend=False, height=380)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Average order value by region"
   },
   {
-    "objectID": "projects/list/amazon.html#takeaways",
-    "href": "projects/list/amazon.html#takeaways",
+    "objectID": "projects/list/Sales Analytics Dashboard.html#takeaways",
+    "href": "projects/list/Sales Analytics Dashboard.html#takeaways",
     "title": "Sales Analytics Dashboard",
     "section": "Takeaways",
-    "text": "Takeaways\n\n\n\n\n\n\nNoteInsights\n\n\n\n\nElectronics leads revenue, reflecting higher unit prices.\nRevenue shows clear seasonality with a Q4 lift.\nEMEA has the highest order count, but APAC edges ahead on AOV."
+    "text": "Takeaways\n\n\n\n\n\n\nNoteInsights\n\n\n\n\nElectronics leads revenue, reflecting higher unit prices.\nRevenue shows clear seasonality with a Q4 lift — consistent with typical retail patterns.\nEMEA has the highest order count, but APAC edges ahead on AOV — a hint that premium positioning differs by region."
   },
   {
-    "objectID": "projects/list/amazon.html#what-i-practiced",
-    "href": "projects/list/amazon.html#what-i-practiced",
+    "objectID": "projects/list/Sales Analytics Dashboard.html#what-i-practiced",
+    "href": "projects/list/Sales Analytics Dashboard.html#what-i-practiced",
     "title": "Sales Analytics Dashboard",
     "section": "What I practiced",
-    "text": "What I practiced\n\nIdiomatic pandas groupby / rolling windows\nBuilding interactive Plotly charts inside Quarto\nUsing code-fold and code-tools for a clean reading experience\nFigure captions and cross-refs (@fig-category, etc.)"
+    "text": "What I practiced\n\nIdiomatic pandas groupby / rolling windows\nInteractive Plotly charts inside Quarto\ncode-fold and code-tools for a clean reading experience\nFigure cross-references (@fig-category, @fig-trend)\nMermaid diagrams and LaTeX equations alongside code"
   },
   {
-    "objectID": "projects/list/index.html",
-    "href": "projects/list/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
-  },
-  {
-    "objectID": "projects/list/index.html#my-projects",
-    "href": "projects/list/index.html#my-projects",
-    "title": "Projects",
-    "section": "",
-    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
+    "objectID": "projects/list/Sales Analytics Dashboard.html#references-attributions",
+    "href": "projects/list/Sales Analytics Dashboard.html#references-attributions",
+    "title": "Sales Analytics Dashboard",
+    "section": "References & attributions",
+    "text": "References & attributions\n\nPandas documentation — https://pandas.pydata.org/docs/\nPlotly Express reference — https://plotly.com/python/plotly-express/\nData generation approach adapted from the NumPy Random Generator tutorial."
   }
 ]

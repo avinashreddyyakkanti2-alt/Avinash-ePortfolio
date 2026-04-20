@@ -33,7 +33,7 @@ BigQuery + Next.js analytics system for real-time insights.
 
 **Tech Stack:** SQL, BigQuery, Next.js
 
-[View Project](amazon.qmd)
+[View Project](Sales Analytics Dashboard.qmd)
 
 </div>
 </div>

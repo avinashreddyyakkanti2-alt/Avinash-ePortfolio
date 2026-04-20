@@ -1,9 +1,12 @@
 ---
 title: "Sales Analytics Dashboard"
 subtitle: "Exploratory analysis of a synthetic e-commerce dataset with interactive Plotly charts"
+description: "Answering three revenue questions with pandas groupby, rolling windows, and Plotly."
+author: "Avinash Reddy"
 date: "2026-03-15"
 categories: [python, pandas, plotly, data-analysis]
-image: cover.png
+image: ../../images/profile.png
+image-alt: "Sales analytics dashboard cover"
 reading-time: true
 format:
   html:
@@ -11,17 +14,53 @@ format:
     code-tools: true
     code-summary: "Show the code"
     highlight-style: github
+    fig-cap-location: bottom
 jupyter: python3
 ---
 
 ## Overview
 
-This project simulates a realistic e-commerce sales dataset and explores it
-to answer three business questions:
+This project simulates a realistic e-commerce sales dataset and explores
+it to answer three business questions:
 
 1. Which product categories drive the most revenue?
 2. How does revenue trend month-over-month?
 3. Which regions have the highest average order value (AOV)?
+
+::: {.callout-note icon=false}
+### Why synthetic data?
+Working with synthetic data lets me publish the full analysis without
+leaking sensitive numbers from any employer or client, while still
+demonstrating real **pandas**, **Plotly**, and **statistical reasoning**
+skills.
+:::
+
+## The analytical workflow
+
+```{mermaid}
+flowchart LR
+    A[Generate synthetic<br/>orders with NumPy] --> B[Load into pandas<br/>DataFrame]
+    B --> C[Group & aggregate]
+    C --> D[Visualise with<br/>Plotly]
+    D --> E[Surface insights]
+    style A fill:#0F4C81,color:#fff
+    style E fill:#FFA552,color:#000
+```
+
+## Revenue calculation
+
+Revenue is computed per order as:
+
+$$
+R_i = u_i \cdot p_i
+$$
+
+where $u_i$ is units sold and $p_i$ is unit price. Monthly revenue is the
+sum across all orders in month $m$:
+
+$$
+R_m = \sum_{i \in m} R_i
+$$
 
 ## Generating the dataset
 
@@ -97,8 +136,7 @@ fig.show()
 ## Question 3 — AOV by region
 
 ```{python}
-#| label: fig-aov
-#| fig-cap: "Average order value by region"
+#| label: tbl-aov
 aov = (
     df.groupby("region", as_index=False)
       .agg(aov=("revenue", "mean"), orders=("revenue", "size"))
@@ -108,6 +146,8 @@ aov
 ```
 
 ```{python}
+#| label: fig-aov
+#| fig-cap: "Average order value by region"
 fig = px.bar(
     aov, x="region", y="aov",
     color="region",
@@ -123,13 +163,23 @@ fig.show()
 
 ::: {.callout-note title="Insights"}
 - **Electronics** leads revenue, reflecting higher unit prices.
-- Revenue shows clear **seasonality** with a Q4 lift.
-- **EMEA** has the highest order count, but **APAC** edges ahead on AOV.
+- Revenue shows clear **seasonality** with a Q4 lift — consistent with
+  typical retail patterns.
+- **EMEA** has the highest order count, but **APAC** edges ahead on AOV —
+  a hint that premium positioning differs by region.
 :::
 
 ## What I practiced
 
-- Idiomatic `pandas` groupby / rolling windows
-- Building **interactive Plotly** charts inside Quarto
-- Using `code-fold` and `code-tools` for a clean reading experience
-- Figure captions and cross-refs (`@fig-category`, etc.)
+- [x] Idiomatic `pandas` groupby / rolling windows
+- [x] Interactive **Plotly** charts inside Quarto
+- [x] `code-fold` and `code-tools` for a clean reading experience
+- [x] Figure cross-references (`@fig-category`, `@fig-trend`)
+- [x] Mermaid diagrams and LaTeX equations alongside code
+
+## References & attributions
+
+- Pandas documentation — <https://pandas.pydata.org/docs/>
+- Plotly Express reference — <https://plotly.com/python/plotly-express/>
+- Data generation approach adapted from the NumPy *Random Generator*
+  tutorial.

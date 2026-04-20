@@ -1,30 +1,55 @@
 ---
 title: "FastAPI vs Express: A Latency Simulation"
 subtitle: "Statistical comparison of two backends under load using a Monte-Carlo simulation"
+description: "Modelling API tail latency with log-normal distributions and testing the difference with Mann–Whitney U."
+author: "Avinash Reddy"
 date: "2026-04-05"
 categories: [python, fastapi, benchmark, statistics]
-image: cover.png
+image: ../../images/profile.png
+image-alt: "API benchmark cover"
 reading-time: true
 format:
   html:
     code-fold: show
     code-tools: true
     highlight-style: github
+    fig-cap-location: bottom
 jupyter: python3
 ---
 
 ## Why this project
 
-As a full-stack developer who uses both Node.js and Python in production, I'm
-often asked *"which is faster?"*. The honest answer: **it depends on the
-workload**. Here I simulate two APIs with different latency profiles and
-compare them statistically.
+As a full-stack developer who uses both Node.js and Python in production,
+I'm often asked *"which is faster?"*. The honest answer: **it depends on
+the workload**. Here I simulate two APIs with different latency profiles
+and compare them **statistically** — which is the analytical discipline
+I'm building through my MSc.
+
+::: {.callout-important icon=false}
+### What this is — and isn't
+This is a **simulation** for demonstrating statistical methodology, not a
+production benchmark. Real numbers would come from load-testing tools
+(k6, Locust) against your actual service. The **method** — percentiles
+plus non-parametric tests — is what transfers.
+:::
+
+## Latency in tail probability
+
+Real API latency is heavy-tailed — slow requests matter disproportionately
+for user experience. The 99th percentile latency (the slowest 1%) is often
+orders of magnitude above the median:
+
+$$
+P_{99} = \inf \{ x \in \mathbb{R} : F(x) \geq 0.99 \}
+$$
+
+where $F$ is the cumulative distribution of response times.
 
 ## Simulation model
 
-Real API latency is not normally distributed — it's heavy-tailed with
-occasional slow requests (GC pauses, network blips). We model each backend
-with a **log-normal distribution**.
+We model each backend with a **log-normal distribution**. This captures
+the occasional slow requests (GC pauses, network blips) that a normal
+distribution would miss.
 
 ```{python}
 #| label: setup
@@ -51,7 +76,7 @@ bench.head()
 
 ```{python}
 #| label: fig-dist
-#| fig-cap: "Latency distribution per backend (log-x)"
+#| fig-cap: "Latency distribution per backend (log-x axis)"
 fig = px.histogram(
     bench, x="latency_ms", color="backend",
     nbins=80, barmode="overlay", opacity=0.65,
@@ -64,8 +89,8 @@ fig.show()
 
 ## Percentile table
 
-Tail latency matters far more than the mean — here are the classic SRE
-percentiles.
+Tail latency matters more than the mean. These are the classic SRE
+percentiles:
 
 ```{python}
 #| label: tbl-pct
@@ -77,9 +102,10 @@ pct = (
 pct
 ```
 
-## Statistical test
+## Is the difference real?
 
-Is the difference in medians statistically significant?
+We use the **Mann–Whitney U test** — a non-parametric test that doesn't
+assume normality, which is appropriate for skewed latency distributions:
 
 ```{python}
 #| label: mannwhitney
@@ -89,19 +115,30 @@ print(f"Mann–Whitney U = {u:,.0f}")
 print(f"p-value        = {p:.3e}")
 ```
 
-## What the numbers tell us
+## Interpretation
 
-::: {.callout-important title="Interpretation"}
-Express has a slightly lower **median** latency, but FastAPI's distribution
-has a **heavier right tail** under this simulation — meaning FastAPI is more
-variable here. In a real system you would measure the actual service, not
-simulate — but the **methodology** (percentiles + non-parametric tests)
-is what matters and transfers directly to production benchmarking.
+::: {.callout-note title="What the numbers tell us"}
+Express has a slightly lower **median** latency, but FastAPI's
+distribution has a **heavier right tail** under this simulation — meaning
+FastAPI is **more variable** here. The p-value is vanishingly small,
+confirming the difference isn't due to chance.
+
+In a real system you would measure the actual service, not simulate — but
+the **methodology** (percentiles + non-parametric tests) is what matters
+and transfers directly to production benchmarking.
 :::
 
 ## What I practiced
 
-- **Plotly** overlay histograms and custom layout
-- **SciPy** non-parametric hypothesis testing
-- Translating **SRE vocabulary** (p50 / p95 / p99) into code
-- Separating methodology from the specific numbers
+- [x] **Plotly** overlay histograms with log-scale axes
+- [x] **SciPy** non-parametric hypothesis testing
+- [x] Translating **SRE vocabulary** (p50 / p95 / p99) into code
+- [x] Separating methodology from the specific numbers
+- [x] LaTeX equations for formal definitions
+
+## References & attributions
+
+- Gregg, B. (2014). *Systems Performance: Enterprise and the Cloud.* —
+  chapter on latency percentiles.
+- SciPy `mannwhitneyu` — <https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html>
+- Plotly Express histogram docs — <https://plotly.com/python/histograms/>
