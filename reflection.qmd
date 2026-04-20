@@ -25,11 +25,11 @@ surfaced a habit that translates directly to code review quality at work.
 I've written Markdown for README files for years, but Quarto's **executable
 code blocks**, **cross-references**, and **SCSS theming** turned what would
 have been a static page into a reproducible artefact. `quarto render`
-regenerates every chart from scratch — no stale screenshots.
+regenerates every chart from scratch - no stale screenshots.
 
 ### SCSS and design systems
 Full-stack work pushed me to rely on component libraries. Writing raw SCSS for
-this site — Sass variables, `@import` Google Fonts, gradient title text —
+this site - Sass variables, `@import` Google Fonts, gradient title text -
 reminded me how much leverage there is in a well-chosen design token.
 
 ### Technical writing
@@ -42,7 +42,7 @@ before writing any code. That skill matters in engineering RFCs too.
 ::: {.callout-warning title="Biggest friction points"}
 - **Quarto's `_quarto.yml` indentation** YAML doesn't forgive mistakes, and
   debugging a silent-failing navbar took an hour the first time.
-- **GitHub Pages caching** — forgetting `.nojekyll` cost me a confused evening
+- **GitHub Pages caching** - forgetting `.nojekyll` cost me a confused evening
   of "why is my CSS missing?".
 - **Balancing design and substance**  it's tempting to spend a whole day on
   colour palettes. I set myself a rule: substance first, polish last.
