@@ -1,7 +1,11 @@
-# Quarto
+# Quarto build artefacts
+/.quarto/
 .quarto/
 _site/
+_freeze/
 *_files/
+*.quarto_ipynb
+**/*.quarto_ipynb
 
 # Python
 __pycache__/
@@ -9,22 +13,22 @@ __pycache__/
 .venv/
 venv/
 env/
+.ipynb_checkpoints/
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# Jupyter (only if you use notebooks)
-.ipynb_checkpoints/
-
-# Large data files (optional but recommended for assignment safety)
-*.zip
-*.xlsx
-*.json
-*.parquet
-
 # IDE
 .vscode/
 .idea/
-/.quarto/
-**/*.quarto_ipynb
+
+# Secrets — never commit these
+.env
+.env.*
+*.pem
+*.key
+
+# Large or generated files
+*.zip
+*.parquet

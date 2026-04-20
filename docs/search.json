@@ -1,0 +1,282 @@
+[
+  {
+    "objectID": "reflection.html",
+    "href": "reflection.html",
+    "title": "Reflection",
+    "section": "",
+    "text": "Coming in with three years of full-stack experience, my instinct was that a portfolio module would be an easy win. It wasn’t and that’s exactly why it was valuable. Writing for a reader who isn’t already sold on my work is a different discipline than writing production code."
+  },
+  {
+    "objectID": "reflection.html#why-i-took-this-module-seriously",
+    "href": "reflection.html#why-i-took-this-module-seriously",
+    "title": "Reflection",
+    "section": "",
+    "text": "Coming in with three years of full-stack experience, my instinct was that a portfolio module would be an easy win. It wasn’t and that’s exactly why it was valuable. Writing for a reader who isn’t already sold on my work is a different discipline than writing production code."
+  },
+  {
+    "objectID": "reflection.html#skills-i-actively-built",
+    "href": "reflection.html#skills-i-actively-built",
+    "title": "Reflection",
+    "section": "Skills I actively built",
+    "text": "Skills I actively built\n\nGit beyond git push -f\nIn a team I already use feature branches, but for a solo project I was guilty of bulk commits. Forcing myself into small, message-driven commits here surfaced a habit that translates directly to code review quality at work.\n\n\nQuarto as a documentation platform\nI’ve written Markdown for README files for years, but Quarto’s executable code blocks, cross-references, and SCSS theming turned what would have been a static page into a reproducible artefact. quarto render regenerates every chart from scratch — no stale screenshots.\n\n\nSCSS and design systems\nFull-stack work pushed me to rely on component libraries. Writing raw SCSS for this site — Sass variables, @import Google Fonts, gradient title text — reminded me how much leverage there is in a well-chosen design token.\n\n\nTechnical writing\nWriting the Sales Analytics project taught me that good analysis is mostly about framing the question clearly before writing any code. That skill matters in engineering RFCs too."
+  },
+  {
+    "objectID": "reflection.html#challenges-i-overcame",
+    "href": "reflection.html#challenges-i-overcame",
+    "title": "Reflection",
+    "section": "Challenges I overcame",
+    "text": "Challenges I overcame\n\n\n\n\n\n\nWarningBiggest friction points\n\n\n\n\nQuarto’s _quarto.yml indentation YAML doesn’t forgive mistakes, and debugging a silent-failing navbar took an hour the first time.\nGitHub Pages caching — forgetting .nojekyll cost me a confused evening of “why is my CSS missing?”.\nBalancing design and substance it’s tempting to spend a whole day on colour palettes. I set myself a rule: substance first, polish last."
+  },
+  {
+    "objectID": "reflection.html#how-this-connects-to-my-career",
+    "href": "reflection.html#how-this-connects-to-my-career",
+    "title": "Reflection",
+    "section": "How this connects to my career",
+    "text": "How this connects to my career\nThe habits this module enforced incremental Git history, executable documentation, branded personal presence - are the same habits that separate senior engineers from mid-level ones. I already applied the executable-docs idea to a runbook at work the week I wrote the first project."
+  },
+  {
+    "objectID": "reflection.html#what-i-would-do-differently",
+    "href": "reflection.html#what-i-would-do-differently",
+    "title": "Reflection",
+    "section": "What I would do differently",
+    "text": "What I would do differently\n\nStart a daily commit journal from day one instead of catching up.\nWrite tests for my sample Python code so the site fails loudly if a library upgrade breaks a chart.\nAdd a blog section to turn one-off learnings into public posts."
+  },
+  {
+    "objectID": "reflection.html#next-steps",
+    "href": "reflection.html#next-steps",
+    "title": "Reflection",
+    "section": "Next steps",
+    "text": "Next steps\n\nDeploy a v2 of the site with an MDX-style blog\nWire up GitHub Actions to auto-deploy on push (done in Module 9)\nPublish the code behind each project as a standalone GitHub repo"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html",
+    "href": "projects/list/api benchmark.html",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "",
+    "text": "As a full-stack developer who uses both Node.js and Python in production, I’m often asked “which is faster?”. The honest answer: it depends on the workload. Here I simulate two APIs with different latency profiles and compare them statistically."
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#why-this-project",
+    "href": "projects/list/api benchmark.html#why-this-project",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "",
+    "text": "As a full-stack developer who uses both Node.js and Python in production, I’m often asked “which is faster?”. The honest answer: it depends on the workload. Here I simulate two APIs with different latency profiles and compare them statistically."
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#simulation-model",
+    "href": "projects/list/api benchmark.html#simulation-model",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Simulation model",
+    "text": "Simulation model\nReal API latency is not normally distributed — it’s heavy-tailed with occasional slow requests (GC pauses, network blips). We model each backend with a log-normal distribution.\n\n\nCode\nimport numpy as np\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objects as go\n\nrng = np.random.default_rng(7)\nN = 10_000\n\n# μ and σ chosen so medians are realistic for a warm, local service\nexpress   = rng.lognormal(mean=np.log(18), sigma=0.35, size=N)  # ms\nfastapi   = rng.lognormal(mean=np.log(22), sigma=0.55, size=N)  # ms\n\nbench = pd.DataFrame({\n    \"latency_ms\": np.concatenate([express, fastapi]),\n    \"backend\":    [\"Express\"] * N + [\"FastAPI\"] * N,\n})\nbench.head()\n\n\n\n\n\n\n\n\n\nlatency_ms\nbackend\n\n\n\n\n0\n18.007752\nExpress\n\n\n1\n19.984015\nExpress\n\n\n2\n16.353199\nExpress\n\n\n3\n13.179527\nExpress\n\n\n4\n15.351865\nExpress"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#distribution-shape",
+    "href": "projects/list/api benchmark.html#distribution-shape",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Distribution shape",
+    "text": "Distribution shape\n\n\nCode\nfig = px.histogram(\n    bench, x=\"latency_ms\", color=\"backend\",\n    nbins=80, barmode=\"overlay\", opacity=0.65,\n    log_x=True, template=\"plotly_white\",\n    title=\"Latency distributions (N=10,000 per backend)\",\n)\nfig.update_layout(height=420)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Latency distribution per backend (log-x)"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#percentile-table",
+    "href": "projects/list/api benchmark.html#percentile-table",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Percentile table",
+    "text": "Percentile table\nTail latency matters far more than the mean — here are the classic SRE percentiles.\n\n\nCode\npct = (\n    bench.groupby(\"backend\")[\"latency_ms\"]\n         .describe(percentiles=[.5, .9, .95, .99])\n         .round(2)\n)\npct\n\n\n\n\nTable 1\n\n\n\n\n\n\n\n\n\n\ncount\nmean\nstd\nmin\n50%\n90%\n95%\n99%\nmax\n\n\nbackend\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpress\n10000.0\n19.04\n6.84\n5.00\n17.92\n27.97\n31.84\n40.18\n74.58\n\n\nFastAPI\n10000.0\n25.50\n14.92\n3.22\n21.90\n44.26\n53.99\n78.07\n187.47"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#statistical-test",
+    "href": "projects/list/api benchmark.html#statistical-test",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "Statistical test",
+    "text": "Statistical test\nIs the difference in medians statistically significant?\n\n\nCode\nfrom scipy import stats\nu, p = stats.mannwhitneyu(express, fastapi, alternative=\"two-sided\")\nprint(f\"Mann–Whitney U = {u:,.0f}\")\nprint(f\"p-value        = {p:.3e}\")\n\n\nMann–Whitney U = 37,586,827\np-value        = 4.692e-203"
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#what-the-numbers-tell-us",
+    "href": "projects/list/api benchmark.html#what-the-numbers-tell-us",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "What the numbers tell us",
+    "text": "What the numbers tell us\n\n\n\n\n\n\nImportantInterpretation\n\n\n\nExpress has a slightly lower median latency, but FastAPI’s distribution has a heavier right tail under this simulation — meaning FastAPI is more variable here. In a real system you would measure the actual service, not simulate — but the methodology (percentiles + non-parametric tests) is what matters and transfers directly to production benchmarking."
+  },
+  {
+    "objectID": "projects/list/api benchmark.html#what-i-practiced",
+    "href": "projects/list/api benchmark.html#what-i-practiced",
+    "title": "FastAPI vs Express: A Latency Simulation",
+    "section": "What I practiced",
+    "text": "What I practiced\n\nPlotly overlay histograms and custom layout\nSciPy non-parametric hypothesis testing\nTranslating SRE vocabulary (p50 / p95 / p99) into code\nSeparating methodology from the specific numbers"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Avinash Reddy Yakkanti",
+    "section": "",
+    "text": "Email\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n    \n     CV\n  \n\n  \n  \n\n\n\n\nThree years shipping production web applications for enterprise and government clients. I work across the stack with React and Next.js on the front, Node.js, Python, Django, and FastAPI on the back.\nI care about type safety, clean APIs, and interfaces that feel fast on a mid-range laptop — not just on the demo machine.\nView Projects About Me"
+  },
+  {
+    "objectID": "index.html#full-stack-engineer",
+    "href": "index.html#full-stack-engineer",
+    "title": "Avinash Reddy Yakkanti",
+    "section": "",
+    "text": "Three years shipping production web applications for enterprise and government clients. I work across the stack with React and Next.js on the front, Node.js, Python, Django, and FastAPI on the back.\nI care about type safety, clean APIs, and interfaces that feel fast on a mid-range laptop — not just on the demo machine.\nView Projects About Me"
+  },
+  {
+    "objectID": "index.html#what-i-do",
+    "href": "index.html#what-i-do",
+    "title": "Avinash Reddy Yakkanti",
+    "section": "What I do",
+    "text": "What I do\n\n\n\n\n{{&lt; bi laptop &gt;}}   Frontend\nPixel-accurate UIs in React and Next.js. TypeScript everywhere, accessibility baked in, performance budgets enforced. I care about the 90th-percentile user, not the best-case demo.\n\n\n\n\n\n\n{{&lt; bi hdd-stack &gt;}}   Backend\nScalable APIs in Node.js and Python. Django for batteries-included web apps, FastAPI for async, typed endpoints that ship with OpenAPI docs for free.\n\n\n\n\n\n\n{{&lt; bi graph-up &gt;}}   Data & ML\nWhen the product needs more than CRUD — I reach for pandas, scikit-learn, and Plotly to turn raw data into decisions and visualisations that stakeholders actually use."
+  },
+  {
+    "objectID": "index.html#featured-projects",
+    "href": "index.html#featured-projects",
+    "title": "Avinash Reddy Yakkanti",
+    "section": "Featured projects",
+    "text": "Featured projects\nA small selection of work. Each page runs live Python code — charts are generated at render time, never screenshots.\n\n\n\n\nNo matching items\n\nSee all projects →"
+  },
+  {
+    "objectID": "index.html#tech-i-reach-for",
+    "href": "index.html#tech-i-reach-for",
+    "title": "Avinash Reddy Yakkanti",
+    "section": "Tech I reach for",
+    "text": "Tech I reach for\n\n\nLanguages  ·  TypeScript · JavaScript · Python · SQL\n\n\nFrontend  ·  React · Next.js · Tailwind CSS · shadcn/ui · React Query\n\n\nBackend  ·  Node.js · Express · Django · FastAPI · REST · GraphQL\n\n\nData  ·  PostgreSQL · Redis · MongoDB · pandas · scikit-learn\n\n\nInfra  ·  Docker · GitHub Actions · AWS · Vercel · Linux"
+  },
+  {
+    "objectID": "index.html#a-quick-snapshot",
+    "href": "index.html#a-quick-snapshot",
+    "title": "Avinash Reddy Yakkanti",
+    "section": "A quick snapshot",
+    "text": "A quick snapshot\n\n\n3+\nYears\nFull-stack experience\n\n\n20+\nProjects\nShipped to production\n\n\n6\nLanguages\nUsed professionally\n\n\n∞\nCommits\nAnd still counting"
+  },
+  {
+    "objectID": "index.html#lets-build-something",
+    "href": "index.html#lets-build-something",
+    "title": "Avinash Reddy Yakkanti",
+    "section": "Let’s build something",
+    "text": "Let’s build something\nI’m open to full-time roles, contract work, and collaborations on interesting problems — especially where web engineering meets data.\n{{&lt; bi envelope-fill &gt;}}   Get in touch"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I am Avinash Reddy, a Full Stack Engineer with 3 years of experience building production-grade web applications for enterprise and government clients.\nI specialise in building scalable systems using modern web and backend technologies, with a strong focus on performance, automation, and real-world impact."
+  },
+  {
+    "objectID": "about.html#what-i-do",
+    "href": "about.html#what-i-do",
+    "title": "About Me",
+    "section": "What I Do",
+    "text": "What I Do\nI work across the full stack:\n\nFrontend development using React.js, Next.js, and TypeScript\n\nBackend development using Node.js, Django, and FastAPI\n\nDesigning and building REST APIs and scalable architectures\n\nWorking with cloud platforms like AWS, Azure, and GCP\n\nHandling large-scale data systems using BigQuery and SQL"
+  },
+  {
+    "objectID": "about.html#experience-highlights",
+    "href": "about.html#experience-highlights",
+    "title": "About Me",
+    "section": "Experience Highlights",
+    "text": "Experience Highlights\n\nBuilt a real-time revenue forecasting platform using Next.js and BigQuery, improving performance by 40%\n\nDeveloped a government form management system that reduced administrative effort by 70%\n\nBuilt scalable APIs and backend services handling thousands of records efficiently\n\nWorked on data ingestion pipelines automating workflows and reducing manual processing by 60%\n\nBuilt production systems used by 100,000+ users in high-traffic environments"
+  },
+  {
+    "objectID": "about.html#my-goals",
+    "href": "about.html#my-goals",
+    "title": "About Me",
+    "section": "My Goals",
+    "text": "My Goals\nMy goal is to grow as a Senior Full Stack / Data Engineer and build systems that combine software engineering, data, and AI to solve real-world problems at scale."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\nDublin City University (DCU)\nMSc in Business Analytics (Expected 2026)\nDublin, Ireland\nVNR Vignana Jyothi Institute of Engineering & Technology\nBTech in Computer Science & Engineering (2023)\nHyderabad, India\n\n\n\n\n\n\n\nNote\n\n\n\nThis portfolio showcases my projects in Full Stack Development, Data Engineering, and AI systems."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Get in touch",
+    "section": "",
+    "text": "I reply to email within a working day. If you’re reaching out about full-stack engineering roles, freelance Python/FastAPI work, or just want to discuss a technical idea - I’d love to hear from you.\n\n avinashyakkanti12.com\n LinkedIn\n GitHub\n\n\n\n\nDublin, Ireland 🇮🇪 — available for remote work across EMEA time zones.\n\n\n\n\n\n\nTip\n\n\n\nThe fastest way to reach me is LinkedIn. I screen email for newsletters, so direct messages cut through faster."
+  },
+  {
+    "objectID": "contact.html#lets-chat",
+    "href": "contact.html#lets-chat",
+    "title": "Get in touch",
+    "section": "",
+    "text": "I reply to email within a working day. If you’re reaching out about full-stack engineering roles, freelance Python/FastAPI work, or just want to discuss a technical idea - I’d love to hear from you.\n\n avinashyakkanti12.com\n LinkedIn\n GitHub"
+  },
+  {
+    "objectID": "contact.html#based-in",
+    "href": "contact.html#based-in",
+    "title": "Get in touch",
+    "section": "",
+    "text": "Dublin, Ireland 🇮🇪 — available for remote work across EMEA time zones.\n\n\n\n\n\n\nTip\n\n\n\nThe fastest way to reach me is LinkedIn. I screen email for newsletters, so direct messages cut through faster."
+  },
+  {
+    "objectID": "projects/list/amazon.html",
+    "href": "projects/list/amazon.html",
+    "title": "Sales Analytics Dashboard",
+    "section": "",
+    "text": "This project simulates a realistic e-commerce sales dataset and explores it to answer three business questions:\n\nWhich product categories drive the most revenue?\nHow does revenue trend month-over-month?\nWhich regions have the highest average order value (AOV)?"
+  },
+  {
+    "objectID": "projects/list/amazon.html#overview",
+    "href": "projects/list/amazon.html#overview",
+    "title": "Sales Analytics Dashboard",
+    "section": "",
+    "text": "This project simulates a realistic e-commerce sales dataset and explores it to answer three business questions:\n\nWhich product categories drive the most revenue?\nHow does revenue trend month-over-month?\nWhich regions have the highest average order value (AOV)?"
+  },
+  {
+    "objectID": "projects/list/amazon.html#generating-the-dataset",
+    "href": "projects/list/amazon.html#generating-the-dataset",
+    "title": "Sales Analytics Dashboard",
+    "section": "Generating the dataset",
+    "text": "Generating the dataset\nWe generate 5,000 synthetic orders with realistic seasonality using NumPy.\n\n\nShow the code\nimport numpy as np\nimport pandas as pd\n\nrng = np.random.default_rng(42)\nn = 5_000\n\ncategories = [\"Electronics\", \"Apparel\", \"Home\", \"Books\", \"Sports\"]\nregions    = [\"EMEA\", \"AMER\", \"APAC\"]\n\ndates = pd.date_range(\"2024-01-01\", \"2025-12-31\", freq=\"D\")\ndf = pd.DataFrame({\n    \"order_date\": rng.choice(dates, n),\n    \"category\":   rng.choice(categories, n, p=[0.30, 0.25, 0.20, 0.10, 0.15]),\n    \"region\":     rng.choice(regions,    n, p=[0.45, 0.35, 0.20]),\n    \"units\":      rng.integers(1, 6, n),\n    \"unit_price\": np.round(rng.gamma(2.5, 30, n), 2),\n})\ndf[\"revenue\"] = (df[\"units\"] * df[\"unit_price\"]).round(2)\ndf[\"month\"]   = df[\"order_date\"].dt.to_period(\"M\").dt.to_timestamp()\ndf.head()\n\n\n\n\n\n\n\n\n\norder_date\ncategory\nregion\nunits\nunit_price\nrevenue\nmonth\n\n\n\n\n0\n2024-03-06\nElectronics\nAMER\n5\n150.68\n753.40\n2024-03-01\n\n\n1\n2025-07-19\nHome\nAMER\n4\n80.71\n322.84\n2025-07-01\n\n\n2\n2025-04-23\nSports\nEMEA\n3\n178.89\n536.67\n2025-04-01\n\n\n3\n2024-11-16\nBooks\nEMEA\n1\n81.10\n81.10\n2024-11-01\n\n\n4\n2024-11-12\nElectronics\nAMER\n1\n47.78\n47.78\n2024-11-01\n\n\n\n\n\nData generation pipeline"
+  },
+  {
+    "objectID": "projects/list/amazon.html#question-1-revenue-by-category",
+    "href": "projects/list/amazon.html#question-1-revenue-by-category",
+    "title": "Sales Analytics Dashboard",
+    "section": "Question 1 — Revenue by category",
+    "text": "Question 1 — Revenue by category\n\n\nShow the code\nimport plotly.express as px\n\nby_cat = (\n    df.groupby(\"category\", as_index=False)[\"revenue\"]\n      .sum()\n      .sort_values(\"revenue\", ascending=False)\n)\n\nfig = px.bar(\n    by_cat, x=\"category\", y=\"revenue\",\n    color=\"category\",\n    text_auto=\".2s\",\n    template=\"plotly_white\",\n    title=\"Revenue by category\",\n)\nfig.update_layout(showlegend=False, height=420)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 1: Total revenue by product category (interactive)"
+  },
+  {
+    "objectID": "projects/list/amazon.html#question-2-monthly-revenue-trend",
+    "href": "projects/list/amazon.html#question-2-monthly-revenue-trend",
+    "title": "Sales Analytics Dashboard",
+    "section": "Question 2 — Monthly revenue trend",
+    "text": "Question 2 — Monthly revenue trend\n\n\nShow the code\nmonthly = df.groupby(\"month\", as_index=False)[\"revenue\"].sum()\nmonthly[\"rolling_3m\"] = monthly[\"revenue\"].rolling(3, min_periods=1).mean()\n\nfig = px.line(\n    monthly, x=\"month\", y=[\"revenue\", \"rolling_3m\"],\n    template=\"plotly_white\",\n    title=\"Monthly revenue and 3-month rolling average\",\n    labels={\"value\": \"Revenue (USD)\", \"month\": \"Month\", \"variable\": \"Series\"},\n)\nfig.update_layout(height=420)\nfig.show()\n\n\n\n\n                            \n                                            \n\n\nFigure 2: Monthly revenue with 3-month rolling average"
+  },
+  {
+    "objectID": "projects/list/amazon.html#question-3-aov-by-region",
+    "href": "projects/list/amazon.html#question-3-aov-by-region",
+    "title": "Sales Analytics Dashboard",
+    "section": "Question 3 — AOV by region",
+    "text": "Question 3 — AOV by region\n\n\nShow the code\naov = (\n    df.groupby(\"region\", as_index=False)\n      .agg(aov=(\"revenue\", \"mean\"), orders=(\"revenue\", \"size\"))\n      .round(2)\n)\naov\n\n\n\n\n\n\n\n\n\n\n\nregion\naov\norders\n\n\n\n\n0\nAMER\n230.21\n1781\n\n\n1\nAPAC\n238.54\n982\n\n\n2\nEMEA\n228.24\n2237\n\n\n\n\n\n\n\nFigure 3: Average order value by region\n\n\n\n\n\n\nShow the code\nfig = px.bar(\n    aov, x=\"region\", y=\"aov\",\n    color=\"region\",\n    template=\"plotly_white\",\n    text_auto=\".2f\",\n    title=\"Average Order Value by region\",\n)\nfig.update_layout(showlegend=False, height=380)\nfig.show()"
+  },
+  {
+    "objectID": "projects/list/amazon.html#takeaways",
+    "href": "projects/list/amazon.html#takeaways",
+    "title": "Sales Analytics Dashboard",
+    "section": "Takeaways",
+    "text": "Takeaways\n\n\n\n\n\n\nNoteInsights\n\n\n\n\nElectronics leads revenue, reflecting higher unit prices.\nRevenue shows clear seasonality with a Q4 lift.\nEMEA has the highest order count, but APAC edges ahead on AOV."
+  },
+  {
+    "objectID": "projects/list/amazon.html#what-i-practiced",
+    "href": "projects/list/amazon.html#what-i-practiced",
+    "title": "Sales Analytics Dashboard",
+    "section": "What I practiced",
+    "text": "What I practiced\n\nIdiomatic pandas groupby / rolling windows\nBuilding interactive Plotly charts inside Quarto\nUsing code-fold and code-tools for a clean reading experience\nFigure captions and cross-refs (@fig-category, etc.)"
+  },
+  {
+    "objectID": "projects/list/index.html",
+    "href": "projects/list/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
+  },
+  {
+    "objectID": "projects/list/index.html#my-projects",
+    "href": "projects/list/index.html#my-projects",
+    "title": "Projects",
+    "section": "",
+    "text": "Below are some of the projects I have worked on.\n\n\n\n\n\nLLM-powered document Q&A system using FastAPI and LangChain.\nTech Stack: Python, FastAPI, LangChain\nView Project\n\n\n\n\n\nBigQuery + Next.js analytics system for real-time insights.\nTech Stack: SQL, BigQuery, Next.js\nView Project"
+  }
+]

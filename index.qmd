@@ -24,7 +24,7 @@ about:
       target: _blank
     - icon: file-earmark-pdf-fill
       text: CV
-      href: cv/AvinashReddy_CV.pdf
+      href: cv/Avinash_cv.pdf
       target: _blank
     
     
