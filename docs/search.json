@@ -4,49 +4,70 @@
     "href": "reflection.html",
     "title": "Reflection",
     "section": "",
-    "text": "Coming in with three years of full-stack experience, my instinct was that a portfolio module would be an easy win. It wasn’t and that’s exactly why it was valuable. Writing for a reader who isn’t already sold on my work is a different discipline than writing production code."
+    "text": "This module turned out to be one of the most practically useful parts of my MSc so far. Going in, I thought a “portfolio module” would be lightweight - something to polish a CV. Coming out, I realise how much of what we covered maps directly onto how real corporate teams actually work: version control, reproducible reporting, personal branding, and professional web presence.\nThe sessions were consistently engaging, and the guest lectures were a highlight throughout. Hearing practitioners speak on data, AI usage, and business analytics in industry gave context that no textbook could match - it made the tools we were learning feel immediately relevant."
   },
   {
-    "objectID": "reflection.html#why-i-took-this-module-seriously",
-    "href": "reflection.html#why-i-took-this-module-seriously",
+    "objectID": "reflection.html#looking-back-on-the-module",
+    "href": "reflection.html#looking-back-on-the-module",
     "title": "Reflection",
     "section": "",
-    "text": "Coming in with three years of full-stack experience, my instinct was that a portfolio module would be an easy win. It wasn’t and that’s exactly why it was valuable. Writing for a reader who isn’t already sold on my work is a different discipline than writing production code."
+    "text": "This module turned out to be one of the most practically useful parts of my MSc so far. Going in, I thought a “portfolio module” would be lightweight - something to polish a CV. Coming out, I realise how much of what we covered maps directly onto how real corporate teams actually work: version control, reproducible reporting, personal branding, and professional web presence.\nThe sessions were consistently engaging, and the guest lectures were a highlight throughout. Hearing practitioners speak on data, AI usage, and business analytics in industry gave context that no textbook could match - it made the tools we were learning feel immediately relevant."
   },
   {
-    "objectID": "reflection.html#skills-i-actively-built",
-    "href": "reflection.html#skills-i-actively-built",
+    "objectID": "reflection.html#why-this-module-matters-in-the-corporate-world",
+    "href": "reflection.html#why-this-module-matters-in-the-corporate-world",
     "title": "Reflection",
-    "section": "Skills I actively built",
-    "text": "Skills I actively built\n\nGit beyond git push -f\nIn a team I already use feature branches, but for a solo project I was guilty of bulk commits. Forcing myself into small, message-driven commits here surfaced a habit that translates directly to code review quality at work.\n\n\nQuarto as a documentation platform\nI’ve written Markdown for README files for years, but Quarto’s executable code blocks, cross-references, and SCSS theming turned what would have been a static page into a reproducible artefact. quarto render regenerates every chart from scratch — no stale screenshots.\n\n\nSCSS and design systems\nFull-stack work pushed me to rely on component libraries. Writing raw SCSS for this site — Sass variables, @import Google Fonts, gradient title text — reminded me how much leverage there is in a well-chosen design token.\n\n\nTechnical writing\nWriting the Sales Analytics project taught me that good analysis is mostly about framing the question clearly before writing any code. That skill matters in engineering RFCs too."
+    "section": "Why this module matters in the corporate world",
+    "text": "Why this module matters in the corporate world\nMuch of what we learned - Git, GitHub, Quarto, web development fundamentals - is not optional in modern workplaces. It’s expected.\n\nGit and GitHub are the universal language of collaborative work, not just for developers but increasingly for analysts, data scientists, and business teams who track configuration or documentation under version control.\nQuarto bridges a gap I didn’t realise existed: the gap between an analyst’s Jupyter notebook and a stakeholder-ready report. In industry, “send me the analysis” means a clean, reproducible document - not a raw notebook.\nWeb development fundamentals - HTML, CSS, SCSS, site configuration - are table-stakes for anyone who wants to publish their work or build internal tools.\n\nTaken together, this module gave me a toolkit I can walk into any corporate environment with and be immediately productive."
+  },
+  {
+    "objectID": "reflection.html#guest-lectures---data-ai-and-business-analytics",
+    "href": "reflection.html#guest-lectures---data-ai-and-business-analytics",
+    "title": "Reflection",
+    "section": "Guest lectures - data, AI, and business analytics",
+    "text": "Guest lectures - data, AI, and business analytics\nThe guest lectures were genuinely one of the best parts of the module. Speakers covered how data and AI are being used across industry, and how business analytics is shaping decision-making in real organisations.\nA few takeaways that stuck with me:\n\nAI in analytics isn’t replacing analysts - it’s amplifying them. The speakers were consistent on this: LLMs and automated tooling handle the grunt work, but framing the right question, sanity-checking results, and communicating insight still needs a human in the loop.\nData literacy is a business skill, not a technical one. The most valuable analysts translate between data teams and commercial stakeholders - and that translation work is something no AI tool replaces yet.\nPortfolios matter in hiring. More than one speaker mentioned that a clean GitHub and a public project page shortcut entire interview rounds. A working site is evidence.\nReproducibility is competitive advantage. Teams that can rerun last quarter’s analysis with one command move faster than teams that can’t find last quarter’s spreadsheet.\n\nThose sessions reframed how I think about my own trajectory. The transition from full-stack engineering into business analytics isn’t a side-step - it’s an expansion. The tools are familiar; the audience is new."
+  },
+  {
+    "objectID": "reflection.html#skills-i-built",
+    "href": "reflection.html#skills-i-built",
+    "title": "Reflection",
+    "section": "Skills I built",
+    "text": "Skills I built\n\nGit and GitHub\nI’ve used Git before in team settings, but this module made me take solo Git discipline seriously for the first time. Writing small, descriptive commits; maintaining a clean .gitignore; deploying through GitHub Pages rather than uploading files manually - these habits sound small but they separate amateur work from professional work.\n\n\nQuarto\nEasily the biggest new skill. Before this module, my idea of a “portfolio” was a static HTML page or a LinkedIn profile. Quarto turned it into something far more powerful: a living, executable document where every chart regenerates from code, every page is version controlled, and the entire site is reproducible on any machine.\n\n\nWeb development\nSCSS variables, Google Fonts, Bootswatch themes, favicons, navbar configuration - none of this was in my day-to-day before. Getting hands-on with a real site (rather than reading about CSS) made the concepts stick in a way passive learning never does.\n\n\nWriting for a broader audience\nWriting the project pages and this reflection pushed me to frame technical work for readers who aren’t deep in the details. That’s a core communication skill in any analytics role - the audience is usually a business stakeholder, not a fellow engineer."
   },
   {
     "objectID": "reflection.html#challenges-i-overcame",
     "href": "reflection.html#challenges-i-overcame",
     "title": "Reflection",
     "section": "Challenges I overcame",
-    "text": "Challenges I overcame\n\n\n\n\n\n\nWarningBiggest friction points\n\n\n\n\nQuarto’s _quarto.yml indentation YAML doesn’t forgive mistakes, and debugging a silent-failing navbar took an hour the first time.\nGitHub Pages caching — forgetting .nojekyll cost me a confused evening of “why is my CSS missing?”.\nBalancing design and substance it’s tempting to spend a whole day on colour palettes. I set myself a rule: substance first, polish last."
+    "text": "Challenges I overcame\n\n\n\n\n\n\nWarningThe friction points\n\n\n\n\nYAML indentation. _quarto.yml doesn’t forgive mistakes, and my first silent-failing navbar cost me an hour. Lesson: validate incrementally.\nGitHub Pages + Jekyll. Forgetting .nojekyll led to a confused evening of “why is my CSS missing?”. Trivial fix once I knew where to look.\nBalancing polish and substance. It’s tempting to spend a whole day on colour palettes. I set myself a rule: content first, styling last."
   },
   {
-    "objectID": "reflection.html#how-this-connects-to-my-career",
-    "href": "reflection.html#how-this-connects-to-my-career",
+    "objectID": "reflection.html#what-this-means-for-my-career",
+    "href": "reflection.html#what-this-means-for-my-career",
     "title": "Reflection",
-    "section": "How this connects to my career",
-    "text": "How this connects to my career\nThe habits this module enforced incremental Git history, executable documentation, branded personal presence - are the same habits that separate senior engineers from mid-level ones. I already applied the executable-docs idea to a runbook at work the week I wrote the first project."
+    "section": "What this means for my career",
+    "text": "What this means for my career\nThree lessons I’m taking directly into the next chapter:\n\nReproducibility as a default. Every analysis under version control, every chart regenerated from code, every decision traceable to the data it came from.\nPublic presence matters. A polished portfolio and a clean GitHub profile do a lot of the hiring conversation for you, before you’re even in the room.\nCommunication is half the work. Technical depth alone doesn’t win roles - being able to explain what you did, and why, in clear writing, is what gets remembered."
   },
   {
-    "objectID": "reflection.html#what-i-would-do-differently",
-    "href": "reflection.html#what-i-would-do-differently",
+    "objectID": "reflection.html#what-id-do-differently",
+    "href": "reflection.html#what-id-do-differently",
     "title": "Reflection",
-    "section": "What I would do differently",
-    "text": "What I would do differently\n\nStart a daily commit journal from day one instead of catching up.\nWrite tests for my sample Python code so the site fails loudly if a library upgrade breaks a chart.\nAdd a blog section to turn one-off learnings into public posts."
+    "section": "What I’d do differently",
+    "text": "What I’d do differently\n\nStart the commit discipline from day one rather than catching up mid-project.\nEngage with the guest lectures even more actively - ask more questions, follow up with the speakers afterwards.\nTreat the portfolio as a long-term asset from the start, not a submission to rush at the end."
   },
   {
     "objectID": "reflection.html#next-steps",
     "href": "reflection.html#next-steps",
     "title": "Reflection",
     "section": "Next steps",
-    "text": "Next steps\n\nDeploy a v2 of the site with an MDX-style blog\nWire up GitHub Actions to auto-deploy on push (done in Module 9)\nPublish the code behind each project as a standalone GitHub repo"
+    "text": "Next steps\n\nAdd a third analytics project using a real public dataset.\nWire up GitHub Actions to auto-deploy on every push.\nKeep the site updated quarterly as coursework and experience grow."
+  },
+  {
+    "objectID": "reflection.html#a-final-thank-you",
+    "href": "reflection.html#a-final-thank-you",
+    "title": "Reflection",
+    "section": "A final thank you",
+    "text": "A final thank you\nThis module genuinely shifted how I think about my own work and how I present it. The combination of practical tooling, strong guest lectures on data, AI, and business analytics, and hands-on sessions made it one of the most useful modules of the MSc so far. The skills built here - Git, Quarto, web development, professional writing - are ones I’ll carry into every role that follows.\nThe portfolio is a living thing. This reflection will be updated as the site and my career evolve."
   },
   {
     "objectID": "projects/list/index.html",
