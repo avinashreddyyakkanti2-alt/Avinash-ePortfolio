@@ -107,51 +107,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Avinash Reddy Yakkanti",
+    "title": "Avinash Reddy",
     "section": "",
-    "text": "Email\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n    \n     CV\n  \n\n  \n  \n\n\n\n\nThree years shipping production web applications for enterprise and government clients. I work across the stack with React and Next.js on the front, Node.js, Python, Django, and FastAPI on the back.\nI care about type safety, clean APIs, and interfaces that feel fast on a mid-range laptop — not just on the demo machine.\nView Projects About Me"
+    "text": "LinkedIn GitHub Email\n\n\n\n\n\nI’m a full-stack engineer with 3 years of experience building production systems for enterprise and government clients.\nCurrently pursuing an MSc in Business Analytics, I’m focused on bridging engineering with data-driven decision-making not just building systems, but understanding and influencing the outcomes they produce.\nI enjoy working at the intersection of scalable applications and analytics, turning data into insights that drive real impact."
   },
   {
-    "objectID": "index.html#full-stack-engineer",
-    "href": "index.html#full-stack-engineer",
-    "title": "Avinash Reddy Yakkanti",
+    "objectID": "index.html#hello",
+    "href": "index.html#hello",
+    "title": "Avinash Reddy",
     "section": "",
-    "text": "Three years shipping production web applications for enterprise and government clients. I work across the stack with React and Next.js on the front, Node.js, Python, Django, and FastAPI on the back.\nI care about type safety, clean APIs, and interfaces that feel fast on a mid-range laptop — not just on the demo machine.\nView Projects About Me"
-  },
-  {
-    "objectID": "index.html#what-i-do",
-    "href": "index.html#what-i-do",
-    "title": "Avinash Reddy Yakkanti",
-    "section": "What I do",
-    "text": "What I do\n\n\n\n\n{{&lt; bi laptop &gt;}}   Frontend\nPixel-accurate UIs in React and Next.js. TypeScript everywhere, accessibility baked in, performance budgets enforced. I care about the 90th-percentile user, not the best-case demo.\n\n\n\n\n\n\n{{&lt; bi hdd-stack &gt;}}   Backend\nScalable APIs in Node.js and Python. Django for batteries-included web apps, FastAPI for async, typed endpoints that ship with OpenAPI docs for free.\n\n\n\n\n\n\n{{&lt; bi graph-up &gt;}}   Data & ML\nWhen the product needs more than CRUD — I reach for pandas, scikit-learn, and Plotly to turn raw data into decisions and visualisations that stakeholders actually use."
-  },
-  {
-    "objectID": "index.html#featured-projects",
-    "href": "index.html#featured-projects",
-    "title": "Avinash Reddy Yakkanti",
-    "section": "Featured projects",
-    "text": "Featured projects\nA small selection of work. Each page runs live Python code — charts are generated at render time, never screenshots.\n\n\n\n\nNo matching items\n\nSee all projects →"
-  },
-  {
-    "objectID": "index.html#tech-i-reach-for",
-    "href": "index.html#tech-i-reach-for",
-    "title": "Avinash Reddy Yakkanti",
-    "section": "Tech I reach for",
-    "text": "Tech I reach for\n\n\nLanguages  ·  TypeScript · JavaScript · Python · SQL\n\n\nFrontend  ·  React · Next.js · Tailwind CSS · shadcn/ui · React Query\n\n\nBackend  ·  Node.js · Express · Django · FastAPI · REST · GraphQL\n\n\nData  ·  PostgreSQL · Redis · MongoDB · pandas · scikit-learn\n\n\nInfra  ·  Docker · GitHub Actions · AWS · Vercel · Linux"
-  },
-  {
-    "objectID": "index.html#a-quick-snapshot",
-    "href": "index.html#a-quick-snapshot",
-    "title": "Avinash Reddy Yakkanti",
-    "section": "A quick snapshot",
-    "text": "A quick snapshot\n\n\n3+\nYears\nFull-stack experience\n\n\n20+\nProjects\nShipped to production\n\n\n6\nLanguages\nUsed professionally\n\n\n∞\nCommits\nAnd still counting"
-  },
-  {
-    "objectID": "index.html#lets-build-something",
-    "href": "index.html#lets-build-something",
-    "title": "Avinash Reddy Yakkanti",
-    "section": "Let’s build something",
-    "text": "Let’s build something\nI’m open to full-time roles, contract work, and collaborations on interesting problems — especially where web engineering meets data.\n{{&lt; bi envelope-fill &gt;}}   Get in touch"
+    "text": "I’m a full-stack engineer with 3 years of experience building production systems for enterprise and government clients.\nCurrently pursuing an MSc in Business Analytics, I’m focused on bridging engineering with data-driven decision-making not just building systems, but understanding and influencing the outcomes they produce.\nI enjoy working at the intersection of scalable applications and analytics, turning data into insights that drive real impact."
   },
   {
     "objectID": "about.html",

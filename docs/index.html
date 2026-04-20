@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Full Stack Engineer based in Dublin. 3+ years building production-grade web applications with React, Next.js, Node.js, Python, Django, and FastAPI.">
 
-<title>Avinash Reddy Yakkanti · Full Stack Engineer – Avinash Reddy</title>
+<title>Avinash Reddy · Portfolio – Avinash Reddy</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,12 +34,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-d4a9812550bb38929f63f56df8ca3741.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -75,66 +73,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-featured-projects .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-title','listing-subtitle','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: [],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-featured-projects'] = new List('listing-featured-projects', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -208,162 +148,85 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-<div class="quarto-about-trestles column-page">
-  <div class="about-entity">
-    <img src="images/profile.png" class="about-image
-  rounded " style="width: 18em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Avinash Reddy Yakkanti</h1>
-</div>
-<div class="quarto-title-meta column-page">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="mailto:yakkantiavinash6@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope-fill"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://linkedin.com/in/avinashreddy11105" class="about-link" rel="" target="_blank">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/avinashreddy11105" class="about-link" rel="" target="_blank">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="/cv/Avinash_cv.pdf" class="about-link" rel="" target="_blank">
-    <i class="bi bi-file-earmark-pdf-fill"></i>
-     <span class="about-link-text">CV</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><div id="hero-heading">
-<section id="full-stack-engineer" class="level2">
-<h2 data-anchor-id="full-stack-engineer">Full Stack Engineer</h2>
-<section id="dublin-ireland" class="level4">
-<h4 data-anchor-id="dublin-ireland">Dublin, Ireland</h4>
-<p>Three years shipping production web applications for <strong>enterprise and government clients</strong>. I work across the stack with <a href="https://react.dev"><strong>React</strong></a> and <a href="https://nextjs.org"><strong>Next.js</strong></a> on the front, <a href="https://nodejs.org"><strong>Node.js</strong></a>, <a href="https://www.python.org"><strong>Python</strong></a>, <a href="https://www.djangoproject.com"><strong>Django</strong></a>, and <a href="https://fastapi.tiangolo.com"><strong>FastAPI</strong></a> on the back.</p>
-<p>I care about type safety, clean APIs, and interfaces that feel fast on a mid-range laptop — not just on the demo machine.</p>
-<p><a href="projects/list/" class="btn btn-primary btn-lg me-2" role="button">View Projects</a> <a href="./about.html" class="btn btn-outline-primary btn-lg" role="button">About Me</a></p>
-</section>
-</section>
-</div></div>
-</div>
+<style>
+.hero-container {
+  max-width: 900px;
+  margin: 60px auto;
+}
 
-<p><br></p>
-<section id="what-i-do" class="level2 mt-4">
-<h2 class="mt-4" data-anchor-id="what-i-do">What I do</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-4">
-<div class="card h-100 border-0 shadow-sm">
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206269206c6170746f70203e7d7d-frontend" class="level4 card-body">
-<h4 data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206269206c6170746f70203e7d7d-frontend"><span class="text-primary">{{&lt; bi laptop &gt;}}</span> &nbsp; Frontend</h4>
-<p>Pixel-accurate UIs in <strong>React</strong> and <strong>Next.js</strong>. TypeScript everywhere, accessibility baked in, performance budgets enforced. I care about the 90th-percentile user, not the best-case demo.</p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="card h-100 border-0 shadow-sm">
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206269206864642d737461636b203e7d7d-backend" class="level4 card-body">
-<h4 data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206269206864642d737461636b203e7d7d-backend"><span class="text-primary">{{&lt; bi hdd-stack &gt;}}</span> &nbsp; Backend</h4>
-<p>Scalable APIs in <strong>Node.js</strong> and <strong>Python</strong>. <strong>Django</strong> for batteries-included web apps, <strong>FastAPI</strong> for async, typed endpoints that ship with OpenAPI docs for free.</p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-4">
-<div class="card h-100 border-0 shadow-sm">
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2062692067726170682d7570203e7d7d-data-ml" class="level4 card-body">
-<h4 data-anchor-id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c2062692067726170682d7570203e7d7d-data-ml"><span class="text-primary">{{&lt; bi graph-up &gt;}}</span> &nbsp; Data &amp; ML</h4>
-<p>When the product needs more than CRUD — I reach for <strong>pandas</strong>, <strong>scikit-learn</strong>, and <strong>Plotly</strong> to turn raw data into decisions and visualisations that stakeholders actually use.</p>
-</section>
-</div>
-</div>
-</div>
-<p><br></p>
-</section>
-<section id="featured-projects" class="level2 mt-4">
-<h2 class="mt-4" data-anchor-id="featured-projects">Featured projects</h2>
-<p>A small selection of work. Each page runs live Python code — charts are generated at render time, never screenshots.</p>
-<div id="listing-featured-projects" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
+/* Ensure grid is centered while keeping top alignment */
+.grid {
+  align-items: flex-start !important;
+  justify-content: center !important;
+}
 
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-<p><a href="projects/index.qmd" class="btn btn-link px-0">See all projects →</a></p>
-<p><br></p>
-</section>
-<section id="tech-i-reach-for" class="level2 mt-4">
-<h2 class="mt-4" data-anchor-id="tech-i-reach-for">Tech I reach for</h2>
-<div class="tech-stack">
-<div class="tech-row">
-<p><strong>Languages</strong> &nbsp;·&nbsp; TypeScript · JavaScript · Python · SQL</p>
-</div>
-<div class="tech-row">
-<p><strong>Frontend</strong> &nbsp;·&nbsp; React · Next.js · Tailwind CSS · shadcn/ui · React Query</p>
-</div>
-<div class="tech-row">
-<p><strong>Backend</strong> &nbsp;·&nbsp; Node.js · Express · Django · FastAPI · REST · GraphQL</p>
-</div>
-<div class="tech-row">
-<p><strong>Data</strong> &nbsp;·&nbsp; PostgreSQL · Redis · MongoDB · pandas · scikit-learn</p>
-</div>
-<div class="tech-row">
-<p><strong>Infra</strong> &nbsp;·&nbsp; Docker · GitHub Actions · AWS · Vercel · Linux</p>
-</div>
-</div>
-<p><br></p>
-</section>
-<section id="a-quick-snapshot" class="level2 mt-4">
-<h2 class="mt-4" data-anchor-id="a-quick-snapshot">A quick snapshot</h2>
-<div class="grid text-center">
-<section id="section" class="level3 g-col-6 g-col-md-3">
-<h3 data-anchor-id="section"><span class="stat-number">3+</span></h3>
-<p><strong>Years</strong><br>
-Full-stack experience</p>
-</section>
-<section id="section-1" class="level3 g-col-6 g-col-md-3">
-<h3 data-anchor-id="section-1"><span class="stat-number">20+</span></h3>
-<p><strong>Projects</strong><br>
-Shipped to production</p>
-</section>
-<section id="section-2" class="level3 g-col-6 g-col-md-3">
-<h3 data-anchor-id="section-2"><span class="stat-number">6</span></h3>
-<p><strong>Languages</strong><br>
-Used professionally</p>
-</section>
-<section id="section-3" class="level3 g-col-6 g-col-md-3">
-<h3 data-anchor-id="section-3"><span class="stat-number">∞</span></h3>
-<p><strong>Commits</strong><br>
-And still counting</p>
-</section>
-</div>
-<p><br></p>
-<hr>
-</section>
-<section id="lets-build-something" class="level2 text-center my-5">
-<h2 data-anchor-id="lets-build-something">Let’s build something</h2>
-<p>I’m open to <strong>full-time roles</strong>, <strong>contract work</strong>, and <strong>collaborations</strong> on interesting problems — especially where web engineering meets data.</p>
-<p><a href="./contact.html" class="btn btn-primary btn-lg"><span>{{&lt; bi envelope-fill &gt;}}</span> &nbsp; Get in touch</a></p>
-</section>
-<div class="text-center text-muted small mt-4">
-<p>Built with <a href="https://quarto.org">Quarto</a> · Styled with custom SCSS · Version-controlled end-to-end<br>
-<em>A portfolio that practises what it preaches.</em></p>
-</div>
+.g-col-md-7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
+.profile-img {
+  border-radius: 12px;
+  width: 100%;
+  max-width: 280px;
+  display: block;
+  margin: 0 auto;
+}
 
+.name {
+  margin-top: 15px;
+  font-weight: 600;
+  margin-left : 6px;
+}
+
+.links a {
+  margin-right: 8px;
+}
+
+/* Remove default heading top spacing so "Hello" aligns with image top */
+h2 {
+  margin-top: 0;
+}
+
+</style>
+<div class="hero-container">
+<div class="grid align-items-start justify-content-center">
+<div class="g-col-12 g-col-md-5 text-center">
+<p><img src="images/profile.png" class="profile-img img-fluid"></p>
+<section id="avinash-reddy-yakkanti" class="level3 name">
+<h3 class="name anchored" data-anchor-id="avinash-reddy-yakkanti">Avinash Reddy Yakkanti</h3>
+<div class="links">
+<p><a href="https://linkedin.com/in/avinashreddy11105" class="btn btn-outline-primary btn-sm">LinkedIn</a> <a href="https://github.com/avinashreddy11105" class="btn btn-outline-dark btn-sm">GitHub</a> <a href="mailto:yakkantiavinash6@gmail.com" class="btn btn-outline-secondary btn-sm">Email</a></p>
+</div>
+</section>
+</div>
+<section id="hello" class="level2 g-col-12 g-col-md-7">
+<h2 class="anchored" data-anchor-id="hello">Hello!</h2>
+<p>I’m a full-stack engineer with 3 years of experience building production systems for enterprise and government clients.</p>
+<p>Currently pursuing an MSc in Business Analytics, I’m focused on bridging engineering with data-driven decision-making not just building systems, but understanding and influencing the outcomes they produce.</p>
+<p>I enjoy working at the intersection of scalable applications and analytics, turning data into insights that drive real impact.</p>
+</section>
+</div>
+</div>
 
 
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
