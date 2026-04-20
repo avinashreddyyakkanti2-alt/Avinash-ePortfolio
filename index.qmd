@@ -1,27 +1,202 @@
 ---
 title: "Avinash Reddy Yakkanti"
+pagetitle: "Avinash Reddy Yakkanti · Full Stack Engineer"
+description-meta: "Full Stack Engineer based in Dublin. 3+ years building production-grade web applications with React, Next.js, Node.js, Python, Django, and FastAPI."
+image: images/profile.png
+
 about:
   id: hero-heading
-  template: jolla
+  template: trestles
   image: images/profile.png
+  image-shape: rounded
+  image-width: 18em
   links:
-    - icon: envelope
+    - icon: envelope-fill
       text: Email
       href: mailto:yakkantiavinash6@gmail.com
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com/in/avinashreddy11105
+      target: _blank
     - icon: github
       text: GitHub
       href: https://github.com/yourusername
+      target: _blank
+    - icon: file-earmark-pdf-fill
+      text: CV
+      href: cv/AvinashReddy_CV.pdf
+      target: _blank
+    
+
+listing:
+  - id: featured-projects
+    contents:
+      - "projects/intrusion-detection/intrusion_detection.ipynb"
+      - "projects/sales-analytics/index.qmd"
+      - "projects/api-benchmark/index.qmd"
+    type: grid
+    max-items: 3
+    grid-columns: 3
+    image-height: 180px
+    fields: [image, title, subtitle, categories]
+    sort: "date desc"
+
+format:
+  html:
+    page-layout: full
+    toc: false
 ---
 
 :::{#hero-heading}
 
-Full Stack Engineer · Dublin, Ireland
+## Full Stack Engineer
 
-3 years building production-grade web applications for enterprise and government clients using React.js, Next.js, Node.js, Python, Django, and FastAPI.
+#### Dublin, Ireland
 
-[View About →](about.qmd)
+Three years shipping production web applications for **enterprise and
+government clients**. I work across the stack with
+[**React**](https://react.dev) and [**Next.js**](https://nextjs.org) on the
+front, [**Node.js**](https://nodejs.org), [**Python**](https://www.python.org),
+[**Django**](https://www.djangoproject.com), and
+[**FastAPI**](https://fastapi.tiangolo.com) on the back.
 
+I care about type safety, clean APIs, and interfaces that feel fast on a
+mid-range laptop — not just on the demo machine.
+
+[View Projects](projects/list/){.btn .btn-primary .btn-lg .me-2 role="button"}
+[About Me](about.qmd){.btn .btn-outline-primary .btn-lg role="button"}
+
+:::
+
+<br>
+
+## What I do {.mt-4}
+
+:::{.grid}
+
+:::{.g-col-12 .g-col-md-4}
+::: {.card .h-100 .border-0 .shadow-sm}
+::: {.card-body}
+#### [{{< bi laptop >}}]{.text-primary} &nbsp; Frontend
+Pixel-accurate UIs in **React** and **Next.js**. TypeScript everywhere,
+accessibility baked in, performance budgets enforced. I care about the
+90th-percentile user, not the best-case demo.
+:::
+:::
+:::
+
+:::{.g-col-12 .g-col-md-4}
+::: {.card .h-100 .border-0 .shadow-sm}
+::: {.card-body}
+#### [{{< bi hdd-stack >}}]{.text-primary} &nbsp; Backend
+Scalable APIs in **Node.js** and **Python**. **Django** for batteries-included
+web apps, **FastAPI** for async, typed endpoints that ship with OpenAPI docs
+for free.
+:::
+:::
+:::
+
+:::{.g-col-12 .g-col-md-4}
+::: {.card .h-100 .border-0 .shadow-sm}
+::: {.card-body}
+#### [{{< bi graph-up >}}]{.text-primary} &nbsp; Data & ML
+When the product needs more than CRUD — I reach for **pandas**,
+**scikit-learn**, and **Plotly** to turn raw data into decisions and
+visualisations that stakeholders actually use.
+:::
+:::
+:::
+
+:::
+
+<br>
+
+## Featured projects {.mt-4}
+
+A small selection of work. Each page runs live Python code — charts are
+generated at render time, never screenshots.
+
+:::{#featured-projects}
+:::
+
+[See all projects →](projects/index.qmd){.btn .btn-link .px-0}
+
+<br>
+
+## Tech I reach for {.mt-4}
+
+:::{.tech-stack}
+
+:::{.tech-row}
+**Languages**   &nbsp;·&nbsp;   TypeScript   ·   JavaScript   ·   Python   ·   SQL
+:::
+
+:::{.tech-row}
+**Frontend**   &nbsp;·&nbsp;   React   ·   Next.js   ·   Tailwind CSS   ·   shadcn/ui   ·   React Query
+:::
+
+:::{.tech-row}
+**Backend**   &nbsp;·&nbsp;   Node.js   ·   Express   ·   Django   ·   FastAPI   ·   REST   ·   GraphQL
+:::
+
+:::{.tech-row}
+**Data**   &nbsp;·&nbsp;   PostgreSQL   ·   Redis   ·   MongoDB   ·   pandas   ·   scikit-learn
+:::
+
+:::{.tech-row}
+**Infra**   &nbsp;·&nbsp;   Docker   ·   GitHub Actions   ·   AWS   ·   Vercel   ·   Linux
+:::
+
+:::
+
+<br>
+
+## A quick snapshot {.mt-4}
+
+:::{.grid .text-center}
+
+:::{.g-col-6 .g-col-md-3}
+### [3+]{.stat-number}
+**Years**  
+Full-stack experience
+:::
+
+:::{.g-col-6 .g-col-md-3}
+### [20+]{.stat-number}
+**Projects**  
+Shipped to production
+:::
+
+:::{.g-col-6 .g-col-md-3}
+### [6]{.stat-number}
+**Languages**  
+Used professionally
+:::
+
+:::{.g-col-6 .g-col-md-3}
+### [∞]{.stat-number}
+**Commits**  
+And still counting
+:::
+
+:::
+
+<br>
+
+---
+
+:::{.text-center .my-5}
+
+## Let's build something
+
+I'm open to **full-time roles**, **contract work**, and **collaborations** on
+interesting problems — especially where web engineering meets data.
+
+[[{{< bi envelope-fill >}}]{} &nbsp; Get in touch](contact.qmd){.btn .btn-primary .btn-lg}
+
+:::
+
+:::{.text-center .text-muted .small .mt-4}
+Built with [Quarto](https://quarto.org) · Styled with custom SCSS · Version-controlled end-to-end  
+*A portfolio that practises what it preaches.*
 :::

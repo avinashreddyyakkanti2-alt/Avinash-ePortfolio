@@ -1,0 +1,69 @@
+---
+title: "Reflection"
+subtitle: "What building this ePortfolio taught me"
+date: last-modified
+format:
+  html:
+    toc: true
+---
+
+## Why I took this module seriously
+
+Coming in with three years of full-stack experience, my instinct was that a
+portfolio module would be an easy win. **It wasn't** and that's exactly why
+it was valuable. Writing for a reader who isn't already sold on my work is a
+different discipline than writing production code.
+
+## Skills I actively built
+
+### Git beyond `git push -f`
+In a team I already use feature branches, but for a solo project I was guilty
+of bulk commits. Forcing myself into **small, message-driven commits** here
+surfaced a habit that translates directly to code review quality at work.
+
+### Quarto as a documentation platform
+I've written Markdown for README files for years, but Quarto's **executable
+code blocks**, **cross-references**, and **SCSS theming** turned what would
+have been a static page into a reproducible artefact. `quarto render`
+regenerates every chart from scratch — no stale screenshots.
+
+### SCSS and design systems
+Full-stack work pushed me to rely on component libraries. Writing raw SCSS for
+this site — Sass variables, `@import` Google Fonts, gradient title text —
+reminded me how much leverage there is in a well-chosen design token.
+
+### Technical writing
+Writing the [Sales Analytics](projects/sales-analytics/index.qmd) project
+taught me that good analysis is mostly about **framing the question** clearly
+before writing any code. That skill matters in engineering RFCs too.
+
+## Challenges I overcame
+
+::: {.callout-warning title="Biggest friction points"}
+- **Quarto's `_quarto.yml` indentation** YAML doesn't forgive mistakes, and
+  debugging a silent-failing navbar took an hour the first time.
+- **GitHub Pages caching** — forgetting `.nojekyll` cost me a confused evening
+  of "why is my CSS missing?".
+- **Balancing design and substance**  it's tempting to spend a whole day on
+  colour palettes. I set myself a rule: substance first, polish last.
+:::
+
+## How this connects to my career
+
+The habits this module enforced  **incremental Git history**, **executable
+documentation**, **branded personal presence** - are the same habits that
+separate senior engineers from mid-level ones. I already applied the
+executable-docs idea to a runbook at work the week I wrote the first project.
+
+## What I would do differently
+
+1. Start a **daily commit journal** from day one instead of catching up.
+2. Write **tests for my sample Python code** so the site fails loudly if a
+   library upgrade breaks a chart.
+3. Add a **blog** section to turn one-off learnings into public posts.
+
+## Next steps
+
+- Deploy a **v2** of the site with an MDX-style blog
+- Wire up **GitHub Actions** to auto-deploy on push *(done in Module 9)*
+- Publish the code behind each project as a standalone GitHub repo

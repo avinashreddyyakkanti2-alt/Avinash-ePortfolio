@@ -15,6 +15,9 @@ website:
       - text: CV
         file: cv/Avinash_cv.pdf
         target: _blank
+      - reflection.qmd
+
+      
 
 
 format:
