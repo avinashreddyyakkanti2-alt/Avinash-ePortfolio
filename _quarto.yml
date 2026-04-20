@@ -4,27 +4,68 @@ project:
 
 website:
   title: "Avinash Reddy"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - href: projects/list/index.qmd
-        text: Projects
-    right:
-      - text: CV
-        file: cv/Avinash_cv.pdf
-        target: _blank
-      - reflection.qmd
-      - contact.qmd
-      
+  description: "Full-Stack Engineer building towards Business Analytics. Dublin, Ireland."
+  favicon: images/favicon.ico
+  site-url: https://avinashreddy11105.github.io/Avinash-ePortfolio
+  repo-url: https://github.com/avinashreddy11105/Avinash-ePortfolio
 
+  navbar:
+    logo: images/logo.png
+    logo-alt: "Avinash Reddy logo"
+    background: primary
+    search: true
+    left:
+      - text: "{{< fa house >}} Home"
+        href: index.qmd
+      - text: "{{< fa user >}} About"
+        href: about.qmd
+      - text: "{{< fa folder-open >}} Projects"
+        href: projects/list/index.qmd
+      - text: "{{< fa lightbulb >}} Reflection"
+        href: reflection.qmd
+    right:
+      - text: "{{< fa address-card >}} Contact"
+        href: contact.qmd
+      - text: "{{< fa file-pdf >}} CV"
+        href: cv/Avinash_cv.pdf
+        target: _blank
+      - icon: github
+        href: https://github.com/avinashreddy11105
+        target: _blank
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://linkedin.com/in/avinashreddy11105
+        target: _blank
+        aria-label: LinkedIn
+
+  page-footer:
+    background: light
+    left: |
+      © 2026 Avinash Reddy · All rights reserved
+    center: |
+      Built with [Quarto](https://quarto.org) · Styled with custom SCSS
+    right:
+      - icon: github
+        href: https://github.com/avinashreddy11105
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://linkedin.com/in/avinashreddy11105
+        aria-label: LinkedIn
+      - icon: envelope
+        href: mailto:yakkantiavinash6@gmail.com
+        aria-label: Email
 
 format:
   html:
-    theme: flatly
-    css: styles.css
+    theme:
+      - flatly
+      - styles.scss
     toc: true
-
-
-
+    toc-location: right
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    link-external-icon: true
