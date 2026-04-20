@@ -61,7 +61,7 @@ h2 {
 
 <div class="links">
 [LinkedIn](https://linkedin.com/in/avinashreddy11105){.btn .btn-outline-primary .btn-sm}
-[GitHub](https://github.com/avinashreddy11105){.btn .btn-outline-dark .btn-sm}
+[GitHub](https://github.com/avinashreddy-11105){.btn .btn-outline-dark .btn-sm}
 [Email](mailto:yakkantiavinash6@gmail.com){.btn .btn-outline-secondary .btn-sm}
 </div>
 
