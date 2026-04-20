@@ -123,35 +123,56 @@
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "I am Avinash Reddy, a Full Stack Engineer with 3 years of experience building production-grade web applications for enterprise and government clients.\nI specialise in building scalable systems using modern web and backend technologies, with a strong focus on performance, automation, and real-world impact."
+    "text": "I’m Avinash Reddy, a full-stack engineer with three years of production experience, now pursuing an MSc in Business Analytics at Dublin City University (expected 2026).\nMy career so far has been about building systems that work reliably at scale. My next chapter is about building systems that help organisations decide better - where good engineering meets rigorous analytics.\n\n\n\n\n\n\nNoteTL;DR\n\n\n\nThree years developing web applications for enterprise and government clients. Currently combining that engineering foundation with formal analytics training to move into data-driven product and decision roles."
   },
   {
-    "objectID": "about.html#what-i-do",
-    "href": "about.html#what-i-do",
+    "objectID": "about.html#who-i-am",
+    "href": "about.html#who-i-am",
     "title": "About Me",
-    "section": "What I Do",
-    "text": "What I Do\nI work across the full stack:\n\nFrontend development using React.js, Next.js, and TypeScript\n\nBackend development using Node.js, Django, and FastAPI\n\nDesigning and building REST APIs and scalable architectures\n\nWorking with cloud platforms like AWS, Azure, and GCP\n\nHandling large-scale data systems using BigQuery and SQL"
+    "section": "",
+    "text": "I’m Avinash Reddy, a full-stack engineer with three years of production experience, now pursuing an MSc in Business Analytics at Dublin City University (expected 2026).\nMy career so far has been about building systems that work reliably at scale. My next chapter is about building systems that help organisations decide better - where good engineering meets rigorous analytics.\n\n\n\n\n\n\nNoteTL;DR\n\n\n\nThree years developing web applications for enterprise and government clients. Currently combining that engineering foundation with formal analytics training to move into data-driven product and decision roles."
   },
   {
-    "objectID": "about.html#experience-highlights",
-    "href": "about.html#experience-highlights",
+    "objectID": "about.html#why-this-transition",
+    "href": "about.html#why-this-transition",
     "title": "About Me",
-    "section": "Experience Highlights",
-    "text": "Experience Highlights\n\nBuilt a real-time revenue forecasting platform using Next.js and BigQuery, improving performance by 40%\n\nDeveloped a government form management system that reduced administrative effort by 70%\n\nBuilt scalable APIs and backend services handling thousands of records efficiently\n\nWorked on data ingestion pipelines automating workflows and reducing manual processing by 60%\n\nBuilt production systems used by 100,000+ users in high-traffic environments"
+    "section": "Why this transition",
+    "text": "Why this transition\nAs an engineer, I saw the same pattern repeatedly: teams sit on rich data but make calls on thin intuition. Dashboards get built, nobody uses them, and the next decision is made the same way as the last one.\nI chose the MSc at DCU because I want the statistical and modelling depth to not just move data around, but to reason with it - and the engineering background to turn that reasoning into something production-ready, not a one-off notebook."
   },
   {
-    "objectID": "about.html#my-goals",
-    "href": "about.html#my-goals",
+    "objectID": "about.html#what-i-bring",
+    "href": "about.html#what-i-bring",
     "title": "About Me",
-    "section": "My Goals",
-    "text": "My Goals\nMy goal is to grow as a Senior Full Stack / Data Engineer and build systems that combine software engineering, data, and AI to solve real-world problems at scale."
+    "section": "What I bring",
+    "text": "What I bring\n\nEngineering\n\nFrontend: React, Next.js, TypeScript - accessibility-aware, performance-budgeted\nBackend: Node.js, Django, FastAPI - REST APIs, type-safe contracts\nData layer: PostgreSQL, BigQuery - query optimisation, schema design\nInfra: Docker, GitHub Actions, AWS - reproducible deployments\n\n\n\nAnalytics (growing)\n\nPython data stack: pandas, NumPy, scikit-learn, Plotly\nStatistical reasoning: hypothesis testing, distributions, non-parametric methods\nQuarto & reproducibility: executable reports, version-controlled analysis\nSQL for analysis: window functions, CTEs, BigQuery at scale"
+  },
+  {
+    "objectID": "about.html#production-impact",
+    "href": "about.html#production-impact",
+    "title": "About Me",
+    "section": "Production impact",
+    "text": "Production impact\nConcrete outcomes from my engineering work so far:\n\nMeasurable outcomes from production engagements\n\n\n\n\n\n\nProject\nImpact\n\n\n\n\nReal-time revenue forecasting (Next.js + BigQuery)\n40% query-time reduction\n\n\nGovernment form management system\n70% less admin effort\n\n\nData ingestion automation\n60% less manual processing\n\n\nHigh-traffic production systems\n100,000+ peak users served"
   },
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
     "title": "About Me",
     "section": "Education",
-    "text": "Education\nDublin City University (DCU)\nMSc in Business Analytics (Expected 2026)\nDublin, Ireland\nVNR Vignana Jyothi Institute of Engineering & Technology\nBTech in Computer Science & Engineering (2023)\nHyderabad, India\n\n\n\n\n\n\n\nNote\n\n\n\nThis portfolio showcases my projects in Full Stack Development, Data Engineering, and AI systems."
+    "text": "Education\nDublin City University - Dublin, Ireland\nMSc Business Analytics · September 2025 – expected 2026\nModules include: Data Management, Applied Statistics, Business Intelligence, Machine Learning for Business.\nVNR Vignana Jyothi Institute of Engineering & Technology - Hyderabad, India\nBTech Computer Science & Engineering · 2019 – 2023"
+  },
+  {
+    "objectID": "about.html#what-im-looking-for",
+    "href": "about.html#what-im-looking-for",
+    "title": "About Me",
+    "section": "What I’m looking for",
+    "text": "What I’m looking for\n\n\n\n\n\n\nTipOpen to\n\n\n\n\nAnalytics or data engineering internships (Summer 2026)\nGraduate analyst / data roles (2026 start)\nCollaborations on projects where web engineering meets analytics"
+  },
+  {
+    "objectID": "about.html#beyond-the-screen",
+    "href": "about.html#beyond-the-screen",
+    "title": "About Me",
+    "section": "Beyond the screen",
+    "text": "Beyond the screen\nWhen I’m not coding or studying: endurance running, strategy games, and - fittingly - tinkering with personal analytics projects that nobody asked for.\n\nLast updated: April 2026 · Get in touch →"
   },
   {
     "objectID": "contact.html",

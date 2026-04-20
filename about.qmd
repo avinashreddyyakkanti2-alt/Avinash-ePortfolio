@@ -1,55 +1,92 @@
 ---
 title: "About Me"
+subtitle: "Engineer by training, analyst by direction"
+image: images/profile.png
+toc: true
+toc-location: right
 ---
 
+## Who I am
 
-I am **Avinash Reddy**, a Full Stack Engineer with **3 years of experience** building production-grade web applications for enterprise and government clients.
+I'm **Avinash Reddy**, a full-stack engineer with three years of
+production experience, now pursuing an **MSc in Business Analytics** at
+**Dublin City University** (expected 2026).
 
-I specialise in building scalable systems using modern web and backend technologies, with a strong focus on performance, automation, and real-world impact.
+My career so far has been about building systems that work reliably at
+scale. My next chapter is about building systems that help organisations
+**decide better** - where good engineering meets rigorous analytics.
 
----
+::: {.callout-note icon=false}
+### TL;DR
+Three years developing web applications for enterprise and government
+clients. Currently combining that engineering foundation with formal
+analytics training to move into **data-driven product and decision roles**.
+:::
 
-## What I Do
+## Why this transition
 
-I work across the full stack:
+As an engineer, I saw the same pattern repeatedly: teams sit on
+**rich data** but make calls on **thin intuition**. Dashboards get built,
+nobody uses them, and the next decision is made the same way as the last
+one.
 
-- Frontend development using React.js, Next.js, and TypeScript  
-- Backend development using Node.js, Django, and FastAPI  
-- Designing and building REST APIs and scalable architectures  
-- Working with cloud platforms like AWS, Azure, and GCP  
-- Handling large-scale data systems using BigQuery and SQL  
+I chose the MSc at DCU because I want the **statistical and modelling
+depth** to not just move data around, but to reason with it - and the
+engineering background to turn that reasoning into something
+**production-ready**, not a one-off notebook.
 
----
+## What I bring
 
-##  Experience Highlights
+### Engineering
+- **Frontend:** React, Next.js, TypeScript - accessibility-aware, performance-budgeted
+- **Backend:** Node.js, Django, FastAPI - REST APIs, type-safe contracts
+- **Data layer:** PostgreSQL, BigQuery - query optimisation, schema design
+- **Infra:** Docker, GitHub Actions, AWS - reproducible deployments
 
-- Built a **real-time revenue forecasting platform** using Next.js and BigQuery, improving performance by 40%  
-- Developed a **government form management system** that reduced administrative effort by 70%  
-- Built scalable APIs and backend services handling thousands of records efficiently  
-- Worked on data ingestion pipelines automating workflows and reducing manual processing by 60%  
-- Built production systems used by 100,000+ users in high-traffic environments  
+### Analytics (growing)
+- **Python data stack:** pandas, NumPy, scikit-learn, Plotly
+- **Statistical reasoning:** hypothesis testing, distributions, non-parametric methods
+- **Quarto & reproducibility:** executable reports, version-controlled analysis
+- **SQL for analysis:** window functions, CTEs, BigQuery at scale
 
----
+## Production impact
 
-##  My Goals
+Concrete outcomes from my engineering work so far:
 
-My goal is to grow as a **Senior Full Stack / Data Engineer** and build systems that combine **software engineering, data, and AI** to solve real-world problems at scale.
+| Project | Impact |
+|---------|--------|
+| Real-time revenue forecasting (Next.js + BigQuery) | **40%** query-time reduction |
+| Government form management system | **70%** less admin effort |
+| Data ingestion automation | **60%** less manual processing |
+| High-traffic production systems | **100,000+** peak users served |
 
----
----
+: Measurable outcomes from production engagements {.striped .hover}
 
 ## Education
 
-**Dublin City University (DCU)**  
-MSc in Business Analytics *(Expected 2026)*  
-Dublin, Ireland  
+**Dublin City University** - Dublin, Ireland  
+*MSc Business Analytics* · September 2025 – expected 2026  
+Modules include: Data Management, Applied Statistics, Business
+Intelligence, Machine Learning for Business.
 
-**VNR Vignana Jyothi Institute of Engineering & Technology**  
-BTech in Computer Science & Engineering *(2023)*  
-Hyderabad, India  
+**VNR Vignana Jyothi Institute of Engineering & Technology** - Hyderabad, India  
+*BTech Computer Science & Engineering* · 2019 – 2023
+
+## What I'm looking for
+
+::: {.callout-tip icon=false}
+### Open to
+- **Analytics or data engineering internships** (Summer 2026)
+- **Graduate analyst / data roles** (2026 start)
+- **Collaborations** on projects where web engineering meets analytics
+:::
+
+## Beyond the screen
+
+When I'm not coding or studying: endurance running, strategy games, and -
+fittingly - tinkering with personal analytics projects that nobody asked
+for.
 
 ---
 
-::: callout-note
-This portfolio showcases my projects in Full Stack Development, Data Engineering, and AI systems.
-:::
+*Last updated: April 2026 · [Get in touch →](contact.qmd)*
